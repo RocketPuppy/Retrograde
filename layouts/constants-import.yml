@@ -1,0 +1,12 @@
+constants:
+  a: &width 2.375in
+  b: &height 3.375in
+
+safe-width:
+  width: *width
+safe-height:
+  height: *height
+safe-top:
+  y: 0
+safe-left:
+  x: 0

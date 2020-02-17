@@ -1,0 +1,28 @@
+constants:
+  ap: &plus-width += 2.375in
+  bp: &plus-height += 3.375in
+
+safe-bottom:
+  extends: safe-top
+  y: *plus-height
+safe-right:
+  extends: safe-left
+  x: *plus-width
+safe-middle-horizontal:
+  extends: safe-right
+  x: /= 2
+
+safe:
+  extends:
+    - safe-width
+    - safe-height
+    - safe-top
+    - safe-left
+    - dotted
+
+ability-icon:
+  width: 30
+  height: 30
+
+abilities-font:
+  font_size: 6

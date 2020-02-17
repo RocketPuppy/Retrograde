@@ -1,0 +1,59 @@
+constants:
+  a: &width 2.375in
+  ap: &plus-width += 2.375in
+  b: &height 3.375in
+  bp: &plus-height += 3.375in
+  c: &plus-border-size += .0625in
+  d: &plus-border-dsize += .125in
+  e: &plus-cut-size += .125in
+  f: &plus-cut-dsize += .25in
+
+safe-width:
+  width: *width
+safe-height:
+  height: *height
+safe-top:
+  extends: border-top
+  y: *plus-border-size
+safe-left:
+  extends: border-left
+  x: *plus-border-size
+
+border-width:
+  extends: safe-width
+  width: *plus-border-dsize
+border-height:
+  extends: safe-height
+  height: *plus-border-dsize
+border-top:
+  extends: cut-top
+  y: *plus-cut-size
+border-left:
+  extends: cut-left
+  x: *plus-cut-size
+
+border:
+  extends:
+    - border-width
+    - border-height
+    - border-top
+    - border-left
+    - dashed
+
+cut-width:
+  extends: border-width
+  width: *plus-cut-dsize
+cut-height:
+  extends: border-height
+  height: *plus-cut-dsize
+cut-top:
+  y: 0
+cut-left:
+  x: 0
+
+cut:
+  extends:
+    - cut-width
+    - cut-height
+    - cut-top
+    - cut-left
