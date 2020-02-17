@@ -18,3 +18,7 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
+    - uses: actions/upload-artifact@v1
+      with:
+        name: output
+        path: output
