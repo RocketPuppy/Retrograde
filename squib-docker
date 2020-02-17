@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SCRIPTNAME=$(basename $0)
+DIRNAME=$(readlink -f $(dirname $0))
+
+docker run --rm -v "$DIRNAME":/usr/src/app andymeneely/squib ruby "$*"
