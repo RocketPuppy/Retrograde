@@ -27,6 +27,7 @@ GEM
       cairo-gobject (= 3.4.1)
       gobject-introspection (= 3.4.1)
     pkg-config (1.4.0)
+    rake (13.0.1)
     roo (2.8.2)
       nokogiri (~> 1)
       rubyzip (>= 1.2.1, < 2.0.0)
@@ -52,6 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   squib
 
 BUNDLED WITH
