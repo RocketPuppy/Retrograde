@@ -1,0 +1,92 @@
+title:
+  extends:
+    - safe-top
+    - safe-width
+    - safe-left
+  width: -= 1.25in
+  x: += .375in
+  y: += .125in
+  align: left
+
+spacecraft-class:
+  extends:
+    - safe-top
+    - safe-left
+  x: += .125in
+  y: += .11in
+  height: 65
+  width: 65
+
+stat-icon:
+  height: 60
+  width: 60
+
+population:
+  extends:
+    - safe-top
+    - safe-right
+  x: -= .4in
+  y: += .125in
+
+construction:
+  extends:
+    - safe-top
+    - safe-right
+  x: -= .75in
+  y: += .125in
+
+bombardment:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += 1.25in
+  x: += .25in
+
+range:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += 1.25in
+  x: -= .5in
+
+accuracy:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += 1.5in
+  x: -= .5in
+
+armor:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += .75in
+  x: -= 30
+
+delta-vee:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += 2in
+  x: -= 30
+
+abilities:
+  extends:
+    - safe-width
+    - safe-bottom
+    - safe-left
+    - debug
+  width: -= .25in
+  x: += .125in
+  y: -= 1in
+
+abilities:
+  extends:
+    - safe-left
+    - safe-bottom
+    - safe-width
+    - abilities-font
+  width: -= .25in
+  height: .75in
+  x: += .125in
+  y: -= .875in
