@@ -10,8 +10,6 @@ class Import < Squib::Deck
     args[:width] = "2.375in"
     super(**args) do
       instance_eval(&block)
-
-      output
     end
   end
 

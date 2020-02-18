@@ -22,11 +22,15 @@ end
     rect layout: 'safe'
 
     deck.render self, @data
+
+    output
   end
   Print.new pre_layouts, base_layouts, deck, dpi: 300 do
     background color: 'white'
     rect layout: 'safe'
 
     deck.render self, @data
+
+    output
   end
 end

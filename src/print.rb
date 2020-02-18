@@ -14,8 +14,6 @@ class Print < Squib::Deck
       rect layout: 'border'
 
       instance_eval(&block)
-
-      output
     end
   end
 
