@@ -109,7 +109,7 @@ orbitals:
   align: center
   height: *minus-orbital-offset
   valign: bottom
-  spacing: 20
+  spacing: 5
   font_size: 12
 
 horizon:

@@ -139,9 +139,8 @@ Each turn the next value printed clockwise becomes active. The active value is
 referred to as the **current transfer cost**.
 
 Each asset defines a set of orbitals that spacecraft can occupy. Each orbital
-has an entry cost that specifies the amount of delta-vee required to enter it,
-either entering from above or below. To enter an orbital a spacecraft pays the
-orbital entry cost for the direction it is moving and moves to that orbital.
+has a cost that specifies the amount of delta-vee required to enter it. To enter
+an orbital a spacecraft pays the orbital entry cost and moves to that orbital.
 
 - Population: the asset adds this amount of population to your population total,
   allowing you to build more spacecraft

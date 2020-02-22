@@ -23,7 +23,7 @@ class Asset < Card
 
     orbits api, data['orbit'].map { |x| x.split(",") }.transpose
 
-    orbitals api, data['orbitals'].map { |x| x.split("/").map { |y| y.split(",") } }
+    orbitals api, data['orbitals'].map { |x| x.to_s.split(",") }
 
     horizon api
 
@@ -120,12 +120,11 @@ class Asset < Card
 
   def orbitals(api, orbital_data)
     orbital_string = orbital_data.map do |orbitals|
-      [":orbital-up: --- :orbital-down:"].concat(orbitals.reverse.map { |orbital|
-        "#{orbital[0]} --- #{orbital[1]}"
+      [":orbital-down:\n"].concat(orbitals.reverse.map { |orbital|
+        "#{orbital}"
       }).join("\n")
     end
     api.text layout: 'orbitals', str: orbital_string, markup: true do |embed|
-      embed.svg layout: 'orbital-icon', key: ':orbital-up:', file: 'icons/orbital-up.svg'
       embed.svg layout: 'orbital-icon', key: ':orbital-down:', file: 'icons/orbital-down.svg'
     end
   end
