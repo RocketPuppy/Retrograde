@@ -122,23 +122,11 @@ horizon:
   y: -= 1.175in
   stroke_width: 4
 
-factory:
-  extends:
-    - main-left
-    - main-bottom
-  y: -= .7in
-  x: += .125in
-  font_size: 8
-  valign: bottom
-factory-icon:
-  width: .165in
-  height: .165in
-
 construction:
   extends:
     - main-left
     - main-bottom
-  y: -= .3in
+  y: -= .7in
   x: += .125in
   font_size: 8
   height: .165in
@@ -157,6 +145,19 @@ population:
   font_size: 8
   valign: bottom
 population-icon:
+  width: .165in
+  height: .165in
+
+bombardment:
+  extends:
+    - main-left
+    - main-bottom
+  y: -= .3in
+  x: += .125in
+  font_size: 8
+  height: .165in
+  valign: bottom
+bombardment-icon:
   width: .165in
   height: .165in
 
@@ -190,7 +191,7 @@ abilities:
     - main-bottom
     - main-width
     - abilities-font
-  width: -= .55in
+  width: -= .62in
   height: .7in
-  x: += .45in
+  x: += .52in
   y: -= .8in

@@ -27,9 +27,9 @@ class Asset < Card
 
     horizon api
 
-    factory api, data['factory']
     population api, data['population']
-    construction api, data['construction']
+    construction api, data['construction'].zip(data['factory']).map { |x| "#{x[0] || 0}/#{x[1] || 0}" }
+    bombardment api, data['bombardment']
 
     homeworld api, data['homeworld']
 
@@ -56,12 +56,12 @@ class Asset < Card
     end
   end
 
-  def factory(api, factory_data)
-    factory_data = factory_data.map do |factory|
-      ":factory: #{factory}"
+  def bombardment(api, bombardment_data)
+    bombardment_data = bombardment_data.map do |bombardment|
+      ":bombardment: #{bombardment}"
     end
-    api.text layout: 'factory', str: factory_data do |embed|
-      embed.svg layout: 'factory-icon', key: ':factory:', file: 'icons/factory.svg'
+    api.text layout: 'bombardment', str: bombardment_data do |embed|
+      embed.svg layout: 'bombardment-icon', key: ':bombardment:', file: 'icons/bombardment.svg'
     end
   end
 
