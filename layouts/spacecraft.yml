@@ -42,18 +42,11 @@ bombardment:
   y: += 1.25in
   x: += .25in
 
-range:
-  extends:
-    - safe-middle-horizontal
-    - safe-top
-  y: += 1.25in
-  x: -= .5in
-
 accuracy:
   extends:
     - safe-middle-horizontal
     - safe-top
-  y: += 1.5in
+  y: += 1.25in
   x: -= .5in
 
 armor:

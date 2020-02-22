@@ -23,7 +23,6 @@ class Spacecraft < Card
     population api, data['population']
     bombardment api, data['bombardment']
     construction api, data['construction']
-    range api, data['range']
     accuracy api, data['accuracy']
     armor api, data['armor']
     delta_vee api, data['delta-vee']
@@ -57,14 +56,8 @@ class Spacecraft < Card
     end
   end
 
-  def range(api, range_data)
-    api.text layout: 'range', str: range_data.map { |x| ":range: #{x}" } do |embed|
-      embed.svg layout: 'stat-icon', key: ':range:', file: 'icons/range.svg'
-    end
-  end
-
   def accuracy(api, accuracy_data)
-    api.text layout: 'accuracy', str: accuracy_data.map { |x| ":accuracy: #{x}" } do |embed|
+    api.text layout: 'accuracy', str: accuracy_data.map { |x| ":accuracy:\n\r #{x}" } do |embed|
       embed.svg layout: 'stat-icon', key: ':accuracy:', file: 'icons/accuracy.svg'
     end
   end
