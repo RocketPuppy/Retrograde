@@ -33,7 +33,7 @@ class Asset < Card
 
     homeworld api, data['homeworld']
 
-    ship_classes api, data['classes'].map { |x| x.split(",") }
+    ship_classes api, data['classes'].map { |x| (x || "").split(",") }
 
     abilities api, data['abilities']
   end
@@ -86,7 +86,7 @@ class Asset < Card
   def ship_classes(api, ship_class_data)
     ship_class_data = ship_class_data.map do |ship_classes|
       ship_classes = ship_classes.map do |ship_class|
-        ship_class_to_icon ship_class
+        ship_class_to_icon ship_class unless ship_class.empty?
       end
       ship_classes.join("\n")
     end
