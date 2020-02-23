@@ -36,7 +36,7 @@ class Card
     elsif ship_class == 'Cruiser'
       ':cruiser:'
     else
-      throw "Unknown ship class"
+      throw "Unknown ship class #{ship_class}"
     end
   end
 
