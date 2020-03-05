@@ -1,0 +1,85 @@
+constants:
+  a: &title-height .5in
+  am: &minus-title-height -= .525in
+  b: &title-width 1.5in
+  c: &abilities-height .7in
+  cp: &minus-abilities-height -= 1.35in
+
+# Main card body, without the orbit framing
+main-width:
+  extends:
+    - safe-width
+main-height:
+  extends:
+    - safe-height
+main-top:
+  extends:
+    - safe-top
+main-left:
+  extends:
+    - safe-left
+main-bottom:
+  extends:
+    - safe-bottom
+main-right:
+  extends:
+    - safe-right
+
+main:
+  extends:
+    - main-width
+    - main-height
+    - main-top
+    - main-left
+
+# Main card body elements
+
+title:
+  extends:
+    - main-bottom
+    - main-left
+    - debug
+  align: left
+  x: += .125in
+  y: *minus-title-height
+  width: *title-width
+  height: *title-height
+
+construction:
+  extends:
+    - main-right
+    - main-bottom
+    - debug
+  y: *minus-title-height
+  x: -= .3in
+  font_size: 8
+  height: .165in
+  valign: bottom
+construction-icon:
+  width: .165in
+  height: .165in
+
+bombardment:
+  extends:
+    - main-right
+    - main-bottom
+    - debug
+  y: *minus-title-height
+  x: -= .665in
+  font_size: 8
+  height: .165in
+  valign: bottom
+bombardment-icon:
+  width: .165in
+  height: .165in
+
+abilities:
+  extends:
+    - main-left
+    - main-bottom
+    - main-width
+    - abilities-font
+  width: -= .25in
+  height: *abilities-height
+  x: += .125in
+  y: *minus-abilities-height

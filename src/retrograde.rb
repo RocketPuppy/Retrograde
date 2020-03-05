@@ -1,6 +1,7 @@
 require 'squib'
 require_relative 'asset'
 require_relative 'spacecraft'
+require_relative 'upgrade'
 require_relative 'import'
 require_relative 'print'
 
@@ -16,7 +17,7 @@ def base_layouts
   ['layouts/constants.yml']
 end
 
-[Asset.new, Spacecraft.new].each do |deck|
+[Asset.new, Spacecraft.new, Upgrade.new].each do |deck|
   Import.new pre_layouts, base_layouts, deck, dpi: 300 do
     background color: 'white'
     rect layout: 'safe'

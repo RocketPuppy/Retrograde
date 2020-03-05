@@ -70,8 +70,9 @@ important to always be constructing the right things at the right time.
 Any card under construction finishes construction and enters play when it has
 a number of construction points on it equal to its construction attribute.
 Spacecraft enter play in the closest orbital to the card that constructed them.
-Upgrades enter play on top of the card that constructed them. Assets enter play
-tapped, where they are being constructed.
+Upgrades enter play under the card that constructed them, such that the upgrade
+text is still visible. Assets enter play tapped, where they are being
+constructed.
 
 To construct a spacecraft or upgrade on a card capable of construction, place it
 tapped next to the card.
@@ -138,9 +139,11 @@ printed four delta-vee values. The value on the top of the card is active first.
 Each turn the next value printed clockwise becomes active. The active value is
 referred to as the **current transfer cost**.
 
-Each asset defines a set of orbitals that spacecraft can occupy. Each orbital
-has a cost that specifies the amount of delta-vee required to enter it. To enter
-an orbital a spacecraft pays the orbital entry cost and moves to that orbital.
+Each asset defines a set of orbitals that spacecraft can occupy. Spacecraft
+occupying an orbital are arranged above the asset, with spacecraft in a lower
+orbital arranged below spacecraft in a higher orbital. Each orbital has a cost
+that specifies the amount of delta-vee required to enter it. To enter an orbital
+a spacecraft pays the orbital entry cost and moves to that orbital.
 
 - Population: the asset adds this amount of population to your population total,
   allowing you to build more spacecraft
@@ -151,7 +154,7 @@ an orbital a spacecraft pays the orbital entry cost and moves to that orbital.
 
 ### Upgrades
 
-Upgrades can be constructed to give cards special abilities or modifiers they
+Upgrades can be constructed to give assets special abilities or modifiers they
 wouldn't otherwise have. Upgrades have a bombardment resistance and may be
 targeted for bombardment.
 
@@ -211,8 +214,8 @@ not make any maneuvers this turn.
 A spacecraft may initiate a **Bombardment** maneuver. This costs all the
 delta-vee for the spacecraft. The spacecraft does damage to the asset it is
 currently orbiting equal to its bombardment power minus 1 for each orbital
-between it and the asset. The asset is destroyed and flipped over if it sustains
-damage equal to its bombardment resistance.
+between it and the asset. If the asset sustains damage greater than or equal to
+its bombardment resistance it is destroyed. Flip it face down.
 
 ## Hazards
 
