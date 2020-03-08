@@ -19,6 +19,6 @@ class Print < Squib::Deck
 
   def output
     save_png prefix: @name, dir: "output/print/cards"
-    save_sheet prefix: "retrograde_#{@name}", dir: "output/print/sheets", columns: 4
+    save_sheet prefix: "retrograde_#{@name}", dir: "output/print/sheets", columns: 4, sprue: "sprues/print-sprue.yml"
   end
 end

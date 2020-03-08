@@ -38,7 +38,6 @@ title:
   extends:
     - main-bottom
     - main-left
-    - debug
   align: left
   x: += .125in
   y: *minus-title-height
@@ -49,7 +48,6 @@ construction:
   extends:
     - main-right
     - main-bottom
-    - debug
   y: *minus-title-height
   x: -= .3in
   font_size: 8
@@ -63,7 +61,6 @@ bombardment:
   extends:
     - main-right
     - main-bottom
-    - debug
   y: *minus-title-height
   x: -= .665in
   font_size: 8

@@ -4,9 +4,11 @@ title:
     - safe-width
     - safe-left
   width: -= 1.25in
+  height: .5in
   x: += .375in
   y: += .125in
   align: left
+  font_size: 8
 
 spacecraft-class:
   extends:

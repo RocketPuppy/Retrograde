@@ -17,8 +17,6 @@ class Upgrade < Card
 
   # Takes the api object defining the Squib DSL and the deck data to render
   def render(api, data)
-    api.rect layout: 'main'
-
     title api, data['name']
 
     construction api, data['construction']

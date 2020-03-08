@@ -102,9 +102,9 @@ class Asset < Card
 
   def orbits(api, orbits_data)
     orbit api, 'orbit-top', :with_icon, orbits_data[0]
-    orbit api, 'orbit-left', orbits_data[1]
+    orbit api, 'orbit-right', orbits_data[1]
     orbit api, 'orbit-bottom', orbits_data[2]
-    orbit api, 'orbit-right', orbits_data[3]
+    orbit api, 'orbit-left', orbits_data[3]
   end
 
   def orbit(api, layout, with_icon = :without_icon, orbit_data)
