@@ -10,3 +10,5 @@ Missile Frigate,Frigate,2,2,5,4,3,1,
 Destroyer,Frigate,1,3,3,4,4,2,
 Heavy Frigate,Frigate,3,4,3,4,3,1,
 Battleship,Cruiser,3,4,6,6,5,2,
+Inteprlanetary Missile,Corvette,2,1,10,0,3,2,"Interplanetary Missile may :burn: the same turn it is constructed. Interplanetary Missile may bombard the asset it is orbiting without spending any delta-vee. Destroy Interplanetary Missile at the end of this turn."
+Colony Ship,Frigate,0,4,4,7,4,0,"Colony ship may contribute 4 :construction: to the asset it is orbiting, if it does Colony Ship is destroyed and does not create a debris field."
