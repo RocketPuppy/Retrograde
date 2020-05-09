@@ -39,7 +39,7 @@ class Asset < Card
   end
 
   def title(api, title_data)
-    api.text layout: 'title', str: data['name']
+    api.text layout: 'title', str: title_data
   end
 
   def homeworld(api, homeworld_data)
