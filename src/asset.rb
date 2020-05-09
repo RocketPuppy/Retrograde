@@ -3,6 +3,10 @@ require_relative 'card'
 
 # Layout methods and deck data for Asset card types
 class Asset < Card
+  def initialize(index = :all)
+    @index = index
+  end
+
   def data
     Squib.csv file: 'card_data/assets.csv'
   end
@@ -17,13 +21,13 @@ class Asset < Card
 
   # Takes the api object defining the Squib DSL and the deck data to render
   def render(api, data)
-    api.rect layout: 'main'
+    api.rect layout: 'main', range: @index
 
     title api, data['name']
 
-    orbits api, data['orbit'].map { |x| x.split(",") }.transpose
+    orbits api, data['orbit'].map { |x| x == nil ? [nil, nil, nil, nil] : x.split(",") }.transpose
 
-    orbitals api, data['orbitals'].map { |x| x.to_s.split(",") }
+    orbitals api, data['orbitals'].map { |x| x == nil ? [] : x.to_s.split(",") }
 
     horizon api
 
@@ -39,7 +43,7 @@ class Asset < Card
   end
 
   def title(api, title_data)
-    api.text layout: 'title', str: title_data
+    api.text layout: 'title', str: title_data, range: @index
   end
 
   def homeworld(api, homeworld_data)
@@ -51,7 +55,7 @@ class Asset < Card
       end
     end
 
-    api.text layout: 'homeworld', str: homeworld_data do |embed|
+    api.text layout: 'homeworld', str: homeworld_data, range: @index do |embed|
       embed.svg layout: 'homeworld-icon', key: ':homeworld:', file: 'icons/homeworld.svg'
     end
   end
@@ -60,7 +64,7 @@ class Asset < Card
     bombardment_data = bombardment_data.map do |bombardment|
       ":bombardment: #{bombardment}"
     end
-    api.text layout: 'bombardment', str: bombardment_data do |embed|
+    api.text layout: 'bombardment', str: bombardment_data, range: @index do |embed|
       embed.svg layout: 'bombardment-icon', key: ':bombardment:', file: 'icons/bombardment.svg'
     end
   end
@@ -69,7 +73,7 @@ class Asset < Card
     population_data = population_data.map do |population|
       ":population: #{population}"
     end
-    api.text layout: 'population', str: population_data do |embed|
+    api.text layout: 'population', str: population_data, range: @index do |embed|
       embed.svg layout: 'population-icon', key: ':population:', file: 'icons/population.svg'
     end
   end
@@ -78,7 +82,7 @@ class Asset < Card
     construction_data = construction_data.map do |construction|
       ":construction: #{construction}"
     end
-    api.text layout: 'construction', str: construction_data do |embed|
+    api.text layout: 'construction', str: construction_data, range: @index do |embed|
       embed.svg layout: 'construction-icon', key: ':construction:', file: 'icons/construction.svg'
     end
   end
@@ -91,13 +95,13 @@ class Asset < Card
       ship_classes.join("\n")
     end
 
-    api.text layout: 'ship-classes', str: ship_class_data do |embed|
+    api.text layout: 'ship-classes', str: ship_class_data, range: @index do |embed|
       ship_class_embed embed
     end
   end
 
   def horizon(api)
-    api.ellipse layout: 'horizon'
+    api.ellipse layout: 'horizon', range: @index
   end
 
   def orbits(api, orbits_data)
@@ -111,7 +115,8 @@ class Asset < Card
     if with_icon == :with_icon then
       orbit_data = orbit_data.map { |x| ":orbit: #{x}" }
     end
-    api.text layout: layout, str: orbit_data do |embed|
+
+    api.text layout: layout, str: orbit_data, range: @index do |embed|
       if with_icon == :with_icon then
         embed.svg layout: 'orbit-icon', key: ':orbit:', file: 'icons/orbits.svg'
       end
@@ -124,7 +129,7 @@ class Asset < Card
         "#{orbital}"
       }).join("\n")
     end
-    api.text layout: 'orbitals', str: orbital_string, markup: true do |embed|
+    api.text layout: 'orbitals', str: orbital_string, markup: true, range: @index do |embed|
       embed.svg layout: 'orbital-icon', key: ':orbital-down:', file: 'icons/orbital-down.svg'
     end
   end

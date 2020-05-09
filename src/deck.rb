@@ -1,0 +1,109 @@
+require 'squib'
+
+class Deck
+  def initialize(name, path, assets, upgrades, spacecraft)
+    @name = name
+    @path = path
+    @assets = assets
+    @upgrades = upgrades
+    @spacecraft = spacecraft
+  end
+
+  def name
+    @name
+  end
+
+  def data
+    card_names = csv
+    big_data = card_names['name'].map do |name|
+      d = asset_index(@assets.data, name)
+      if d != nil then
+        d['internal_card_type'] = [:asset]
+        d
+      else
+        d = spacecraft_index(@spacecraft.data, name)
+        if d != nil then
+          d['internal_card_type'] = [:spacecraft]
+          d
+        else
+          d = upgrade_index(@upgrades.data, name)
+          if d != nil then
+            d['internal_card_type'] = [:upgrade]
+            d
+          else
+            throw "Couldn't find card name in assets, upgrades, or spacecraft"
+          end
+        end
+      end
+    end
+    starter = ["internal_card_type"].concat(@assets.data.to_h.keys).concat(@upgrades.data.to_h.keys).concat(@spacecraft.data.to_h.keys).uniq.each_with_object({}) { |k, o| o[k] = [] }
+    big_data = big_data.each_with_object(starter) do |data, memo|
+      memo.keys.each do |k|
+        memo[k] = memo[k].concat(data[k] || [nil])
+      end
+    end
+    Squib::DataFrame.new(big_data)
+  end
+
+  def layout
+    []
+  end
+
+  def asset_index(asset_data, card_name)
+    @asset_index ||= asset_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
+    i = @asset_index[card_name]
+    if i != nil then
+      asset_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
+    else
+      nil
+    end
+  end
+
+  def spacecraft_index(spacecraft_data, card_name)
+    @spacecraft_index ||= spacecraft_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
+    i = @spacecraft_index[card_name]
+    if i != nil then
+      spacecraft_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
+    else
+      nil
+    end
+  end
+
+  def upgrade_index(upgrade_data, card_name)
+    @upgrade_index ||= upgrade_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
+    i = @upgrade_index[card_name]
+    if i != nil then
+      upgrade_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
+    else
+      nil
+    end
+  end
+
+  # I'm rendering assets from the wrong deck on the wrong deck
+  def render(api, data, base_layouts)
+    data["internal_card_type"].each_with_index do |card_type, i|
+      assets = Asset.new(i)
+      spacecraft = Spacecraft.new(i)
+      upgrades = Upgrade.new(i)
+
+      if card_type == :asset then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(assets.layout)))
+        assets.render(api, data)
+      end
+
+      if card_type == :spacecraft then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(spacecraft.layout)))
+        spacecraft.render(api, data)
+      end
+
+      if card_type == :upgrade then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(upgrades.layout)))
+        upgrades.render(api, data)
+      end
+    end
+  end
+
+  private def csv
+    Squib.csv file: @path
+  end
+end

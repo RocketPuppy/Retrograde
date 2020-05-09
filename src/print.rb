@@ -4,10 +4,11 @@ class Print < Squib::Deck
   def initialize(pre_layouts, base_layouts, deck, **args, &block)
     @data = deck.data
     @name = deck.name
+    @layouts = pre_layouts.concat(['layouts/constants-print.yml']).concat(base_layouts)
 
     args[:height] = "3.75in"
     args[:width] = "2.75in"
-    args[:layout] = pre_layouts.concat(['layouts/constants-print.yml']).concat(base_layouts).concat(deck.layout)
+    args[:layout] = @layouts.concat(deck.layout)
     args[:cards] = @data['name'].size
     super(**args) do
       rect layout: 'cut'
@@ -18,7 +19,7 @@ class Print < Squib::Deck
   end
 
   def output
-    save_png prefix: @name, dir: "output/print/cards"
+    save_png prefix: @name, dir: "output/print/#{@name}"
     save_sheet prefix: "retrograde_#{@name}", dir: "output/print/sheets", columns: 4, sprue: "sprues/print-sprue.yml"
   end
 end
