@@ -14,8 +14,8 @@ class Import < Squib::Deck
     end
   end
 
-  def output
-    save_png prefix: @name, dir: "output/import/#{@name}"
-    save_sheet prefix: "retrograde_#{@name}", dir: "output/import/sheets", columns: 4
+  def output(save_png: true, save_sheet: true)
+    save_png prefix: @name, dir: "output/import/#{@name}" if save_png
+    save_sheet prefix: "retrograde_#{@name}", dir: "output/import/sheets", columns: 4 if save_sheet
   end
 end

@@ -47,7 +47,7 @@ decks.map do |deck_file|
 
     deck.render self, @data, @layouts
 
-    output
+    output(save_png: false)
   end
   Print.new pre_layouts, base_layouts, deck, dpi: 300 do
     background color: 'white'
@@ -55,6 +55,6 @@ decks.map do |deck_file|
 
     deck.render self, @data, @layouts
 
-    output
+    output(save_png: false)
   end
 end
