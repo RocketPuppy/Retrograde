@@ -1,7 +1,7 @@
 name,construction,bombardment,abilities
 "Missile Defense System",4,3,"Maneuver: Attack a spacecraft in orbit around this asset. The attack has 6 :delta-vee: and 1 :accuracy:."
 "Debris Sweeper",3,3,"At the beginning of your turn, remove two debris in orbit around this asset."
-"Debris Reclamation",3,3,"When this asset is tapped for construction you may remove one debris in orbit around this asset. If you do, this asset gains +1 :factory: until the end of this turn."
+"Debris Reclamation",3,3,"When this asset is tapped for construction you may remove one debris in orbit around this asset. If you do, this asset gains +1 :construction: production until the end of this turn."
 "University",3,2,"When this asset is tapped for research you may draw two cards instead of one."
 "Espionage Agency",4,2,"At the beginning of your turn you may look at the top card of the opposing player's deck."
 "Booster Rockets",2,2,"When a spacecraft enters play around this asset it may enter in any orbital."
@@ -10,5 +10,6 @@ name,construction,bombardment,abilities
 "Corvette Facilities",4,3,"This asset may construct :corvette: spacecraft."
 "Fighter Facilities",4,3,"This asset may construct :fighter: spacecraft."
 "Fortified Buildings",2,3,"This asset gains +2 :bombardment:."
-"Accelerated Assembly Lines",4,2,"This asset gains +2 :factory: when constructing spacecraft."
-"Colonization Training",4,2,"This asset gains +2 :factory: when constructing assets."
+"Accelerated Assembly Lines",4,2,"Spacecraft constructed by this asset cost 2 fewer :construction."
+"Colonization Training",4,2,"Assets constructed by this asset cost 2 fewer :construction:."
+"Debris screen",3,2,"All :burn:s to this asset cost one more :delta-vee:"
