@@ -162,7 +162,8 @@ targeted for bombardment.
 
 There are a wealth of tactical options available in the simulation to win the
 war. These are collectively referred to as maneuvers, whether undertaken by an
-asset, upgrade, or spacecraft.
+asset, upgrade, or spacecraft. A spacecraft may undertake up to two maneuvers
+each turn.
 
 ### Burn
 
