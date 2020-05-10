@@ -35,8 +35,9 @@ Turns start with an upkeep phase. It has the following steps:
 1. If you have no homeworld, you lose the game.
 2. Each of your assets orbit. Move the orbit token on your homeworld one space
    around the track.
-3. Each spacecraft heals any damage to its armor.
-4. Each asset heals any damage it sustained due to bombardment.
+3. Each of your spacecraft heals any damage to its armor.
+4. Each of your assets heals any damage it sustained due to bombardment.
+5. Each of your spacecraft regenerate their delta-vee.
 
 #### Maneuvers
 
@@ -50,8 +51,8 @@ capacity.
 
 #### End of Turn
 
-At the end of the turn all cards that are tapped are untapped. All spacecraft
-regenerate their delta-vee. Any end of turn effects trigger here.
+At the end of the turn all cards that are tapped are untapped. Any end of
+turn effects trigger here.
 
 ## Strategic Options
 
@@ -64,7 +65,7 @@ wage war with a proper mix of assets, upgrades, and spacecraft.
 ### Construction
 
 Assets are innately capable of constructing upgrades, spacecraft, and other
-assets. They can only construct one thing at a time, however, so it is vitally
+assets. They can only make progress on one thing at a time, however, so it is vitally
 important to always be constructing the right things at the right time.
 
 Any card under construction finishes construction and enters play when it has
@@ -74,17 +75,17 @@ Upgrades enter play under the card that constructed them, such that the upgrade
 text is still visible. Assets enter play tapped, where they are being
 constructed.
 
-To construct a spacecraft or upgrade on a card capable of construction, place it
+To begin construction of a spacecraft or upgrade on a card capable of construction, place it
 tapped next to the card.
 
-To construct an asset, place it upside down on your field of assets.
+To begin construction of an asset, place it upside down on your field of assets.
 
 Each turn, the card doing construction may contribute a construction amount
 equal to its factory attribute to a card being constructed on it. An asset may
-contribute its construction amount to another asset instead of itself if neither
+contribute its construction amount to an asset under construction instead of itself if neither
 asset has enemy ships in orbit around it.
 
-A card in the progress of constructing another card may have the card currently
+A card in the process of constructing another card may have the card currently
 under construction scrapped and replaced with a new card. This forfeits any
 construction points on the old card.
 
@@ -93,7 +94,7 @@ Multiple assets may be under construction at the same time.
 ### Research
 
 Assets are innately capable of research. A card may perform research during
-a turn instead of contributing construction. When you research with a card it
+a turn instead of performing construction. When you research with a card it
 becomes tapped, and you draw a card from your deck.
 
 ### Spacecraft
@@ -228,5 +229,5 @@ A single paint chip travelling fast enough can destroy the largest capital ship.
 Every time a spacecraft is destroyed it is turned over and becomes debris in the
 same orbital the spacecraft was in before it was destroyed. Spacecraft in an
 orbital with debris have one fewer maximum delta-vee for each debris card in the
-orbital with them. If a spacecraft has 0 or fewer maximum delta-vee in an
+orbital with them. At the end of the turn, if a spacecraft has 0 or fewer delta-vee in an
 orbital with debris it is destroyed.
