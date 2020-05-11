@@ -11,8 +11,8 @@
 # Turn phases
 1. Upkeep
 2. Maneuvers
-3. Construction
-4. Research
+3. Research
+4. Construction
 5. End of turn
 
 ## Upkeep
@@ -94,6 +94,11 @@ The new spacecraft may not make any maneuvers this turn.
 * Spacecraft in an orbital with debris have one fewer maximum delta-vee for each debris in the orbital.
 * At the end of the turn, all spacecraft with zero delta-vee in an orbital that contains debris take one point of damage for each debris in the orbital.
 
+# Research
+* Each turn, any untapped asset may perform research.
+* An asset that performs research becomes tapped.
+* Draw one card when an asset performs research.
+
 # Construction
 * Each turn, any untapped asset may allocate its construction power in one of three ways.
     * An asset may contribute all of its construction power as construction points to a spacecraft under construction on it.
@@ -104,7 +109,7 @@ The new spacecraft may not make any maneuvers this turn.
 ## Constructing Spacecraft
 * Construction points may only be applied to spacecraft if the contributing card has a matching construction facility.
 * Place the spacecraft to be constructed facedown on or next to the asset.
-* When the spacecraft has construction points greater than or equal to its construction cost, it enters play faceup, in the lowest orbital on the asset. It may not make any maneuvers this turn.
+* When the spacecraft has construction points greater than or equal to its construction cost, you may have it enter play faceup in the lowest orbital on the asset.
 * A spacecraft may not complete construction if its construction would put it over the population limit.
 
 ## Constructing Upgrades
@@ -114,12 +119,7 @@ The new spacecraft may not make any maneuvers this turn.
 
 ## Constructing Assets
 * Place the asset to be constructed facedown on the asset field.
-* When the asset has construction points greater than or equal to its construction cost, it enters play tapped and faceup.
-
-# Research
-* Each turn, any untapped asset may perform research.
-* An asset that performs research becomes tapped.
-* Draw one card when an asset performs research.
+* When the asset has construction points greater than or equal to its construction cost, it enters play faceup.
 
 # Spacecraft
 * Class: fighter, corvette, frigate, capital.
