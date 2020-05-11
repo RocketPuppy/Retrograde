@@ -1,5 +1,5 @@
 name,construction,bombardment,abilities
-"Missile Defense System",4,3,"Maneuver: Attack a spacecraft in orbit around this asset. The attack has 6 :delta-vee: and 1 :accuracy:."
+"Missile Defense System",4,3,"Maneuver: Attack a spacecraft in orbit around this asset. The attack has 6 :delta-vee: and 1 :accuracy:. This may only be done once per turn."
 "Debris Sweeper",3,3,"At the beginning of your turn, remove two debris in orbit around this asset."
 "Debris Reclamation",3,3,"When this asset is tapped for construction you may remove one debris in orbit around this asset. If you do, this asset gains +1 :construction: production until the end of this turn."
 "University",3,2,"When this asset is tapped for research you may draw two cards instead of one."
