@@ -70,6 +70,7 @@ If they pay the cost and cannot complete the maneuver the cost is not refunded.
 * Any spacecraft may initiate a refit maneuver.
 * If this spacecraft is in the lowest orbital around a friendly asset, no cost: swap this spacecraft with one from your hand of the same class and construction cost.
 The new spacecraft may not make any maneuvers this turn.
+* The new spacecraft may consume more population than is available.
 
 ## Bombardment
 * Any spacecraft may initiate a bombardment maneuver.
