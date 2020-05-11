@@ -105,6 +105,7 @@ The new spacecraft may not make any maneuvers this turn.
 * Construction points may only be applied to spacecraft if the contributing card has a matching construction facility.
 * Place the spacecraft to be constructed facedown on or next to the asset.
 * When the spacecraft has construction points greater than or equal to its construction cost, it enters play faceup, in the lowest orbital on the asset. It may not make any maneuvers this turn.
+* A spacecraft may not complete construction if its construction would put it over the population limit.
 
 ## Constructing Upgrades
 * Place the upgrade to be constructed facedown on or next to the asset.
@@ -130,6 +131,7 @@ The new spacecraft may not make any maneuvers this turn.
 * Delta-vee: shows the maximum delta-vee a spacecraft can consume to make maneuvers each turn.
 * Accuracy: shows the minimum number of attempts this spacecraft can make when attacking other spacecraft.
 * Abilities: Any special abilities that the spacecraft might have.
+* Population: The amount of population consumed when this spacecraft is constructed.
 
 # Assets
 * Construction cost: left side of the construction icon, shows how many construction points this asset requires.
@@ -143,6 +145,7 @@ The new spacecraft may not make any maneuvers this turn.
     * If the asset has damage greater than or equal to its bombardment resistence it is destroyed.
 * Factory classes: shows the classes of spacecraft that can be constructed at this asset.
 * Abilities: Any special abilities the asset might have.
+* Population: The amount of population this asset adds to your population total.
 
 # Upgrades
 * Construction cost: shows how many construction points this asset requires.
