@@ -12,24 +12,27 @@
 1. Upkeep
 2. Maneuvers
 3. Research
-4. Construction
-5. End of turn
+4. Repair
+5. Construction
+6. End of turn
 
 ## Upkeep
 1. If you have no homeworld, you lose the game.
 2. The orbit counter increases by 1. At 4 it wraps around to 1 again.
 3. Each of your spacecraft heals any damage they sustained since your last turn.
-4. Each of your assets heals any damage they sustained since your last turn.
 5. Each of your spacecraft regenerate their delta-vee.
 
 ## Maneuvers
 Any card capable of making maneuvers does so now.
 
-## Construction
-Any card capable of construction does so now.
-
 ## Research
 Any card capable of research does so now.
+
+## Repair
+Assets may repair any damage they've sustained now.
+
+## Construction
+Any card capable of construction does so now.
 
 ## End of turn.
 Any of your cards that were tapped are untapped. Any end of turn effects trigger.
@@ -97,6 +100,11 @@ The new spacecraft may not make any maneuvers this turn.
 * Each turn, any untapped asset may perform research.
 * An asset that performs research becomes tapped.
 * Draw one card when an asset performs research.
+
+# Repair
+* Each turn, any untapped asset may repair any damage they've sustained.
+* An asset that repairs damage removes 1 damage from itself.
+* An asset that repairs damage becomes tapped.
 
 # Construction
 * Each turn, any untapped asset may allocate its construction power in one of three ways.
