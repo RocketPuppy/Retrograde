@@ -91,8 +91,7 @@ The new spacecraft may not make any maneuvers this turn.
 * Destroyed upgrades are removed from the game.
 
 # Debris
-* Spacecraft in an orbital with debris have one fewer maximum delta-vee for each debris in the orbital.
-* At the end of the turn, all spacecraft with zero delta-vee in an orbital that contains debris take one point of damage for each debris in the orbital.
+* At the end of the turn, your spacecraft with zero delta-vee in an orbital that contains debris take one point of damage for each debris in the orbital.
 
 # Research
 * Each turn, any untapped asset may perform research.
