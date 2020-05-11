@@ -49,7 +49,7 @@ If they pay the cost and cannot complete the maneuver the cost is not refunded.
 
 ## Scuttle
 * Any spacecraft may initiate a scuttle maneuver.
-* No cost: destroy this spaceship.
+* 1 delta-vee: destroy this spaceship.
 
 ## Combat
 * Any spacecraft may initiate a combat maneuver.
