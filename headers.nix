@@ -1,9 +1,11 @@
-{ lib, bash, coreutils }:
+{ lib, bash, coreutils, file }:
 let
   src = ./.;
-  headersFn = import ./headers.nix;
-  cardFn = import ./card.nix;
-  files = builtins.filter (lib.strings.hasSuffix ".csv") (builtins.attrNames (builtins.readDir src));
+  # derivation to pull out header
+  # derivation to pull out lines
+  # derivation to smash header + each line
+  # derivation to rebuild original CSV file
+  headers = builtins.readFile :
   fileToDrv = file:
     let
       storeFile = builtins.toFile file (builtins.readFile (src + ("/" + file)));
@@ -16,7 +18,6 @@ let
       '')];
       inherit storeFile coreutils;
     };
-  fileDrvs = builtins.map fileToDrv files;
-  cardDrvs = lib.lists.concatMap (f: cardFn { file = f; inherit bash lib; }) fileDrvs;
 in
-fileDrvs ++ cardDrvs
+builtins.map fileToDrv files
+

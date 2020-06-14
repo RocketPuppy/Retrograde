@@ -12,4 +12,4 @@ name,construction,bombardment,abilities
 "Fortified Buildings",2,3,"This asset gains +2 :bombardment:."
 "Accelerated Assembly Lines",4,2,"Spacecraft constructed by this asset cost 2 fewer :construction."
 "Colonization Training",4,2,"Assets constructed by this asset cost 2 fewer :construction:."
-"Debris, screen",3,2,"All :burn:s to this asset cost one more :delta-vee:"
+"Debris screen",3,2,"All :burn:s to this asset cost one more :delta-vee:"

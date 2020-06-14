@@ -1,23 +1,7 @@
-{ stdenvNoCC, card-data }:
-stdenvNoCC.mkDerivation {
-  pname = "retrograde-decks";
-  version = "0.1";
+{ bash, gnugrep, card-data, deck-data }:
+let
   src = ./.;
-
-  dontConfigure = true;
-
-  buildInputs = [card-data];
-
-  carddata = card-data;
-
-  buildPhase = ''
-    for f in $carddata/*.csv; do grep -E -o "^(\"[^\"]*\")|^([^,]+)" $f > $(basename $f); done
-  '';
-
-  installPhase = ''
-    mkdir $out
-    cp *.csv $out/
-  '';
-
-  phases = ["unpackPhase" "buildPhase" "installPhase"];
-}
+  mk-card-data = import ./card-data.nix;
+  card-data-decks = builtins.map (d: mk-card-data { card-data = d; inherit bash gnugrep; }) card-data;
+in
+card-data-decks ++ deck-data
