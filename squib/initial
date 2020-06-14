@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nix-shell bundix.nix --run "bundix --magic"

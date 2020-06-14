@@ -1,3 +1,14 @@
+# Hack to work around something weird with autoloading these classes in the roo gem
+module Roo
+  class OpenOffice
+  end
+
+  class Excelx
+  end
+
+  class CSV
+  end
+end
 require 'squib'
 
 class Print < Squib::Deck
@@ -18,8 +29,8 @@ class Print < Squib::Deck
     end
   end
 
-  def output(save_png: true, save_sheet: true)
-    save_png prefix: @name, dir: "output/print/#{@name}" if save_png
-    save_sheet prefix: "retrograde_#{@name}", dir: "output/print/sheets", columns: 4, sprue: "sprues/print-sprue.yml" if save_sheet
+  def output(output_path = "output/print", save_png: true, save_sheet: true)
+    save_png prefix: @name, dir: "#{output_path}/#{@name}" if save_png
+    save_sheet prefix: "retrograde_#{@name}", dir: "#{output_path}/sheets", columns: 4, sprue: "sprues/print-sprue.yml" if save_sheet
   end
 end
