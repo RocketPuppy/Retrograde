@@ -26,5 +26,7 @@ rec {
       import = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = false; doImport = true; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; }; }) decks);
       print = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = true; doImport = false; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; }; }) decks);
     };
+  rulebook = callPackage ./rulebook {
+    inherit cards;
   };
 }
