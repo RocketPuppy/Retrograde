@@ -3,8 +3,8 @@ require 'squib'
 # Base layout methods for a card regardless of type. These methods do the same
 # thing regardless of card type
 class Card
-  def abilities(api, ability_data)
-    api.text layout: 'abilities', range: @index, str: ability_data, markup: true do |embed|
+  def abilities(api, ability_data, index)
+    api.text layout: 'abilities', range: index, str: ability_data, markup: true do |embed|
       embed.svg layout: 'ability-icon', key: ':accuracy:', file: 'icons/accuracy.svg'
       embed.svg layout: 'ability-icon', key: ':armor:', file: 'icons/armor.svg'
       embed.svg layout: 'ability-icon', key: ':bombardment:', file: 'icons/bombardment.svg'
@@ -23,7 +23,7 @@ class Card
       embed.svg layout: 'ability-icon', key: ':population:', file: 'icons/population.svg'
       embed.svg layout: 'ability-icon', key: ':range:', file: 'icons/range.svg'
     end
-    api.rect layout: 'abilities', range: @index
+    api.rect layout: 'abilities', range: index
   end
 
   def ship_class_to_icon(ship_class)

@@ -49,6 +49,31 @@ class Deck
     []
   end
 
+  def render(api, data, base_layouts)
+    data["internal_card_type"].each_with_index do |card_type, i|
+      if card_type == :asset then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@assets.layout)))
+        @assets.render(api, data, i)
+      end
+
+      if card_type == :spacecraft then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@spacecraft.layout)))
+        @spacecraft.render(api, data, i)
+      end
+
+      if card_type == :upgrade then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@upgrades.layout)))
+        @upgrades.render(api, data, i)
+      end
+    end
+  end
+
+  private
+
+  def csv
+    Squib.csv file: @path
+  end
+
   def asset_index(asset_data, card_name)
     @asset_index ||= asset_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
     i = @asset_index[card_name]
@@ -77,33 +102,5 @@ class Deck
     else
       nil
     end
-  end
-
-  # I'm rendering assets from the wrong deck on the wrong deck
-  def render(api, data, base_layouts)
-    data["internal_card_type"].each_with_index do |card_type, i|
-      assets = Asset.new(i)
-      spacecraft = Spacecraft.new(i)
-      upgrades = Upgrade.new(i)
-
-      if card_type == :asset then
-        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(assets.layout)))
-        assets.render(api, data)
-      end
-
-      if card_type == :spacecraft then
-        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(spacecraft.layout)))
-        spacecraft.render(api, data)
-      end
-
-      if card_type == :upgrade then
-        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(upgrades.layout)))
-        upgrades.render(api, data)
-      end
-    end
-  end
-
-  private def csv
-    Squib.csv file: @path
   end
 end
