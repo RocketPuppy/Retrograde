@@ -1,22 +1,19 @@
 { lib, bash, coreutils }:
 let
   src = ./.;
-  headersFn = import ./headers.nix;
+  types = ["assets" "upgrades" "spacecraft" ];
   cardFn = import ./card.nix;
   files = builtins.filter (lib.strings.hasSuffix ".csv") (builtins.attrNames (builtins.readDir src));
-  fileToDrv = file:
-    let
-      storeFile = builtins.toFile file (builtins.readFile (src + ("/" + file)));
-    in derivation {
-      name = file;
-      system = builtins.currentSystem;
-      builder = "${bash}/bin/bash";
-      args = [(builtins.toFile "file-builder" ''
-        $coreutils/bin/cp $storeFile $out
-      '')];
-      inherit storeFile coreutils;
-    };
-  fileDrvs = builtins.map fileToDrv files;
-  cardDrvs = lib.lists.concatMap (f: cardFn { file = f; inherit bash lib; }) fileDrvs;
+  files' = builtins.map (f: src + ("/" + f)) files;
+  cardDrvs = lib.lists.concatMap (f: cardFn { file = f; inherit bash lib; }) files';
+  getType = t: builtins.filter (d: d.source == t) cardDrvs;
 in
-fileDrvs ++ cardDrvs
+{
+  cards = cardDrvs;
+  byName = builtins.listToAttrs (
+    builtins.map (d: { name = d.cardName; value = d; }) cardDrvs
+  );
+  byType = builtins.listToAttrs (
+    builtins.map (t: { name = t; value = getType t; }) types
+  );
+}

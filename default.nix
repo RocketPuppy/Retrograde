@@ -7,20 +7,25 @@ let
     rubyPackages = rubyPackages_2_6;
   };
   # DONE: can there be a single derivation per card? I've already got them per file.
+  # Build each card as its own derivation. Also group them by type and name. Also output derivations for the full type data files
   card-data = callPackage ./card-data {};
-  # TODO: can each deck be dependent on just the cards it references?
+  # DONE: can each deck be dependent on just the cards it references?
+  # Build the main deck files and put them in the store so they can be referenced
   deck-data = callPackage ./decks/files.nix {};
+  # Build deck files for the main decks, and build type decks for easy rendering
   decks = callPackage ./decks {
-    inherit card-data deck-data;
+    inherit deck-data card-data;
   };
   # TODO: decks and card-data are parameterized per file now
   # need to parameterize cards per file and per mode
-  cards = callPackage ./cards {
-    inherit (xorg) libpthreadstubs libXdmcp;
-    inherit card-data squib decks;
-    ruby = ruby_2_6;
-    rubyPackages = rubyPackages_2_6;
-  };
+  # Render each deck, parameterized by decks and transitively by card data
+  cards = builtins.map (deck:
+    callPackage ./cards {
+      inherit (xorg) libpthreadstubs libXdmcp;
+      inherit card-data squib deck;
+      ruby = ruby_2_6;
+      rubyPackages = rubyPackages_2_6;
+    }) decks;
   # then finally package the whole thing up so the rulebook only has dependencies on the cards it needs
   rulebook = callPackage ./rulebook {
     inherit cards;

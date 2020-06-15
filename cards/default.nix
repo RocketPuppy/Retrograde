@@ -1,6 +1,6 @@
 { stdenv
 , card-data
-, decks
+, deck
 , squib
 , pkg-config
 , ruby, rubyPackages
@@ -33,10 +33,12 @@ stdenv.mkDerivation {
     librsvg
 
     squib
+    deck
   ];
 
+  # TODO: need type data files
   buildPhase = ''
-    ruby main.rb -i -p -u ${card-data}/upgrades.csv -a ${card-data}/assets.csv -s ${card-data}/spacecraft.csv ${decks}/*
+    ruby main.rb -i -p -u ${card-data.byType.upgrades} -a ${card-data.byType.assets} -s ${card-data.byType.spacecraft} ${deck}
   '';
 
   installPhase = ''
