@@ -11,9 +11,9 @@ Research Station 2321,1,0,2,,,"1,1","2,3,2,1",1,
 Research Station 3212,1,0,2,,,1,"3,2,1,2",1,
 Research Station 2123,1,0,2,,,1,"2,1,2,3",1,
 Lagrange Station 2222,1,1,1,,Fighter,1,"2,2,2,2",1,
-Manufactory A,2,2,3,,"Fighter,Frigate","3,3,1","3,1,2,3",2
-Manufactory B,1,3,3,,"Frigate","3,2,1","4,2,2,3",2
-Manufactory C,3,2,4,,"Corvette,Cruiser","2,2,1","2,1,3,2",2
+Manufactory A,2,2,3,,"Fighter,Frigate","3,3,1","3,1,2,3",2,
+Manufactory B,1,3,3,,"Frigate","3,2,1","4,2,2,3",2,
+Manufactory C,3,2,4,,"Corvette,Cruiser","2,2,1","2,1,3,2",2,
 Supergiant,3,4,6,,"Corvette,Frigate,Cruiser","4,3,2,2,1","4,4,4,4",4,
 Jupiter,4,4,,Y,"Fighter,Corvette,Frigate","4,2,1,1","4,5,5,4",5,:fighter: and :corvette: class spacecraft spend 1 less delta-vee for Burn maneuvers.
 Mars,4,4,,Y,"Frigate,Cruiser","1,1,1","4,3,4,3",4,:frigate: class spacecraft consume 1 less population.
