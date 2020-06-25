@@ -46,7 +46,7 @@ stdenv.mkDerivation {
   ];
 
   buildPhase = ''
-    ruby main.rb $printFlag $importFlag -u $upgrades/*.csv -a $assets/*.csv -s $spacecraft/*.csv --output="$PWD" $cardlist/*.csv
+    ruby main.rb $printFlag $importFlag -u $upgrades/upgrades.csv -a $assets/assets.csv -s $spacecraft/spacecraft.csv --output="$PWD" $cardlist/*.csv
   '';
 
   cardlist = card-list;

@@ -10,13 +10,13 @@ derivation {
     export PATH=$coreutils/bin
     CARDS=($cards)
     mkdir $out
-    cat ''${CARDS[0]} | head -n1 > $out/out.csv
+    cat ''${CARDS[0]} | head -n1 > $out/$type.csv
     for f in $cards; do
       cat $f | tail -n +2 >> card-data.csv
     done
-    sort card-data.csv | uniq >> $out/out.csv
+    sort card-data.csv | uniq >> $out/$type.csv
   '')];
   cards = builtins.map (c: c.card-file) cards-by-type;
 
-  inherit coreutils;
+  inherit coreutils type;
 }
