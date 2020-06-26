@@ -21,6 +21,7 @@ in
 derivation ({
   name = "retrograde-decks-${name}";
   deck-name = name;
+  deckname = name;
   system = builtins.currentSystem;
   builder = "${bash}/bin/bash";
   args = [(builtins.toFile "file-builder" ''
@@ -29,7 +30,7 @@ derivation ({
     # $out, but something in the cards derivation seems
     # to be sourcing it.
     mkdir $out
-    cp $deck $out/out.csv
+    cp $deck $out/$deckname.csv
   '')];
   inherit deck coreutils;
 } // type-files)

@@ -20,8 +20,8 @@ let
     args = [(builtins.toFile "card-list-builder" ''
       export PATH=$coreutils/bin:$PATH
       mkdir $out
-      echo "name" > $out/out.csv
-      echo $cardname >> $out/out.csv
+      echo "name" > $out/"$cardname".csv
+      echo $cardname >> $out/"$cardname".csv
     '')];
     cardname = card-name;
     inherit coreutils;

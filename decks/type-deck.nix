@@ -10,7 +10,9 @@ derivation {
     export PATH=$coreutils/bin:$gnugrep/bin
     echo "name" > $out
     for f in $cards; do
-      cat $f/out.csv | tail -n +2 | grep -E -o "^\"[^\"]*\"|^[^,]+" >> $out
+      for e in $f/*.csv; do
+        cat $e | tail -n +2 | grep -E -o "^\"[^\"]*\"|^[^,]+" >> $out
+      done
     done
   '')];
   cards = builtins.map (c: c.card-list) cards;
