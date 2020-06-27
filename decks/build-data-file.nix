@@ -12,7 +12,7 @@ derivation {
     mkdir $out
     cat ''${CARDS[0]} | head -n1 > $out/$type.csv
     for f in $cards; do
-      cat $f | tail -n +2 >> card-data.csv
+      cat "$f" | tail -n +2 >> card-data.csv
     done
     sort card-data.csv | uniq >> $out/$type.csv
   '')];

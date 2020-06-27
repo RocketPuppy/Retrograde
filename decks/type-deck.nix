@@ -11,7 +11,7 @@ derivation {
     echo "name" > $out
     for f in $cards; do
       for e in $f/*.csv; do
-        cat $e | tail -n +2 | grep -E -o "^\"[^\"]*\"|^[^,]+" >> $out
+        cat "$e" | tail -n +2 | grep -E -o "^\"[^\"]*\"|^[^,]+" >> $out
       done
     done
   '')];
