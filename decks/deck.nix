@@ -1,9 +1,10 @@
 { bash, coreutils, name, deck, card-set, data-file-types }:
 let
   src = ./.;
-  card-names = builtins.tail (
-    builtins.filter (x: builtins.isString x && x != "") (
-      builtins.split "\n" (builtins.readFile deck)));
+  card-names = builtins.map (builtins.replaceStrings ["\""] [""]) (
+    builtins.tail (
+      builtins.filter (x: builtins.isString x && x != "") (
+        builtins.split "\n" (builtins.readFile deck))));
   cards = builtins.map (name:
     builtins.getAttr name card-set
   ) card-names;
@@ -30,7 +31,7 @@ derivation ({
     # $out, but something in the cards derivation seems
     # to be sourcing it.
     mkdir $out
-    cp $deck $out/$deckname.csv
+    cp $deck "$out/$deckname.csv"
   '')];
   inherit deck coreutils;
 } // type-files)

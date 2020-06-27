@@ -1,7 +1,12 @@
 { lib, bash, coreutils, header, row, file-name }:
 let
   name = builtins.hashString "md5" row;
-  card-name = builtins.head (builtins.filter (x: x != null) (builtins.head (builtins.tail (builtins.split "^(\"[^\"]*\")|^([^,]+)" row))));
+  card-name = builtins.replaceStrings ["\""] [""] (
+    builtins.head (
+      builtins.filter (x: x != null) (
+        builtins.head (
+          builtins.tail (
+            builtins.split "^(\"[^\"]*\")|^([^,]+)" row)))));
   type = lib.strings.removeSuffix ".csv" file-name;
   card-file = derivation {
     name = "retrograde-card-${name}-${file-name}";
@@ -20,8 +25,8 @@ let
     args = [(builtins.toFile "card-list-builder" ''
       export PATH=$coreutils/bin:$PATH
       mkdir $out
-      echo "name" > $out/"$cardname".csv
-      echo $cardname >> $out/"$cardname".csv
+      echo "name" > "$out/$cardname.csv"
+      echo $cardname >> "$out/$cardname.csv"
     '')];
     cardname = card-name;
     inherit coreutils;
