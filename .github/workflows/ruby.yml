@@ -15,18 +15,16 @@ jobs:
         OUTS=$(nix-build default.nix -A rendered.cards.all --no-out-link)
         mkdir cards-tmp
         for O in $OUTS; do cp $O/singles/*.png cards-tmp/; done
-        zip -r cards.zip cards-tmp
     - uses: actions/upload-artifact@v1
       with:
         name: cards
-        path: cards.zip
+        path: cards-tmp
     - name: Build decks
       run: |
         OUTS=$(nix-build default.nix -A rendered.decks.all --no-out-link)
         mkdir decks-tmp
         for O in $OUTS; do cp $O/sheets/*.png decks-tmp/; done
-        zip -r decks.zip decks-tmp
     - uses: actions/upload-artifact@v1
       with:
         name: decks
-        path: decks.zip
+        path: decks-tmp
