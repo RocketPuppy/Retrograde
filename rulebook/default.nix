@@ -1,15 +1,20 @@
 { stdenvNoCC
 , texlive
+, inkscape
 , cards
 }:
 
 let
   latex = texlive.combine {
     inherit (texlive)
-      scheme-small
+      scheme-medium
       geometry
       easylist
-      wrapfig;
+      wrapfig
+      svg
+      trimspaces
+      transparent
+      catchfile;
     };
 in
 stdenvNoCC.mkDerivation {
@@ -19,13 +24,17 @@ stdenvNoCC.mkDerivation {
 
   dontConfigure = true;
 
-  buildInputs = [ latex cards ];
+  buildInputs = [ inkscape latex cards ];
 
   inherit cards;
 
   buildPhase = ''
-    echo "\graphicspath{{$cards/output/import/}}" > graphicspath.tex
-    pdflatex rulebook.tex
+    echo "\graphicspath{" > graphicspath.tex
+    for c in $cards; do
+      echo "{$c/singles/}" >> graphicspath.tex
+    done
+    echo "}" >> graphicspath.tex
+    pdflatex --shell-escape -no-mktex=pk rulebook.tex
   '';
 
   installPhase = ''

@@ -3,15 +3,15 @@ name: Build Docs
 on: push
 
 jobs:
-  convert_via_pandoc:
-    runs-on: ubuntu-18.04
+  rulebook:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: mkdir docs
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--output=docs/RULES.pdf RULES.md"
-      - uses: actions/upload-artifact@master
-        with:
-          name: docs
-          path: docs
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v10
+    - name: Build rulebook
+      run: |
+        nix-build -A rulebook
+    - uses: actions/upload-artifact@v1
+      with:
+        name: rulebook
+        path: rulebook.pdf

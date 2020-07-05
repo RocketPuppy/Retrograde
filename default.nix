@@ -30,6 +30,6 @@ rec {
     };
   };
   rulebook = callPackage ./rulebook {
-    inherit cards;
+    cards = rendered.cards.all;
   };
 }

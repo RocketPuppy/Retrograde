@@ -3,10 +3,18 @@
 \usepackage[letterpaper, margin=0.75in]{geometry}
 \usepackage[ampersand]{easylist}
 \usepackage{graphicx}
-% Can't find this because it isn't copied into the nix-environment. Kind of makes it a necessity to package the image generation up into a package.
-\graphicspath{ {./../output/import/assets/} }
+\input{graphicspath.tex}
 
 \usepackage{wrapfig}
+\usepackage[usexcolor, usetransparent]{svg}
+\svgpath{svg/}
+
+\usepackage{caption}
+\usepackage{float}
+
+% Diagram floats
+\floatname{diagram}{}
+\newfloat{diagram}{tbph}{diag}
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\normalsize}{\fontsize{18}{22}\selectfont}
@@ -29,7 +37,29 @@
 }
 {\clearpage \ignorespacesafterend}
 
-\input{graphicspath.tex}
+\newcommand{\side}[4]{
+\begin{wrapfigure}{#1}{0.35\textwidth}
+  \begin{center}
+    #2[width=0.25\textwidth]{#3}
+
+    \caption*{#4}
+  \end{center}
+\end{wrapfigure}
+}
+
+\newcommand{\sideimage}[3]{\side{#1}{\includegraphics}{#2}{#3}}
+\newcommand{\sidesvg}[3]{\side{#1}{\includesvg}{#2}{#3}}
+
+\newcommand{\full}[3]{
+\begin{diagram}
+    \begin{center}
+    {#2[width=\textwidth, height=\textheight]{#1}}
+    \caption*{#3}
+    \end{center}
+\end{diagram}
+}
+\newcommand{\fullimage}[2]{\full{#1}{\includegraphics}{#2}}
+\newcommand{\fullsvg}[2]{\full{#1}{\includesvg}{#2}}
 
 \begin{document}
 
@@ -44,22 +74,20 @@ This guide will show you all you need to know to learn how to play the game.
 \begin{section}{Before You Begin}
 \title
 
-\begin{wrapfigure}{r}{0.35\textwidth}
-  \begin{center}
-    \includegraphics[width=0.25\textwidth]{assets/assets18.png}
-
-    A Homeworld - Earth
-  \end{center}
-\end{wrapfigure}
+\sideimage{r}{Earth00.png}{A Homeworld - Earth}
 
 Construct your deck by selecting a \emph{Homeworld} and 30 other cards.
 Order them in your deck such that you draw what you want when you think you’ll want it.
 There is no shuffling before the game begins.
 
-Place your Homeworld face-up on the field, in front of your deck of cards.
+You and your opponent place your Homeworld face-up on the field, in the center of the asset line.
+These represent your currently controlled assets.
+New assets will be added during the game to the left and right of these first assets.
 Draw a starting hand of 5 cards.
 Flip a coin to determine who goes first.
-Place your orbit tracker at the top of your Homeworld.
+Place your orbit tracker at the top of your respective Homeworlds.
+
+\fullsvg{starting-board-state.svg}{An example of a starting board state.}
 
 \end{section}
 
@@ -102,18 +130,24 @@ Place your orbit tracker at the top of your Homeworld.
         \title
 
         The orbit counter moves one space clockwise around the border of your Homeworld.
+
+        \fullsvg{increment-orbit-counter.svg}{Incrementing the orbit counter}
     \end{section}
 
     \begin{section}{Heal Spacecraft Damage}
         \title
 
         Remove any damage counters from your spacecraft.
+
+        \fullsvg{heal-spacecraft-damage.svg}{Healing spacecraft damage}
     \end{section}
 
     \begin{section}{Regenerate Spacecraft Delta-Vee}
         \title
 
         Remove any delta-vee counters from your spacecraft.
+
+        \fullsvg{regenerate-delta-vee.svg}{Regenerating spacecraft delta-vee}
     \end{section}
 \end{supersection}
 
@@ -126,6 +160,8 @@ Place your orbit tracker at the top of your Homeworld.
 
         In the below diagram the spacecraft L.A.V. spends 4 delta-vee to move from the second orbital on the Supergiant asset to the first.
         This is the cost listed on the asset card for moving into the first orbital.
+
+        \fullsvg{orbital-burn.svg}{In the diagram the spacecraft L.A.V. spends 4 delta-vee to move from the second orbital on the Supergiant asset to the first. This is the cost listed on the asset card for moving into the first orbital.}
     \end{section}
 
     \begin{section}{Transfer Burn}
@@ -134,6 +170,8 @@ Place your orbit tracker at the top of your Homeworld.
         A transfer burn moves a spacecraft from the outermost orbital on the asset it is currently orbiting to the outermost orbital on another asset.
         The transfer burn may only be initiated when the spacecraft is in the outermost orbital of an asset.
         The transfer burn costs an amount of delta-vee equal to the currently active orbit track value on the destination asset.
+
+        \fullsvg{transfer-burn.svg}{A Fast Attack Craft performs a transfer burn.}
     \end{section}
 
     \begin{section}{Scuttle}
@@ -142,8 +180,10 @@ Place your orbit tracker at the top of your Homeworld.
         The scuttle maneuver costs 1 delta-vee and immediately destroys the spacecraft.
         It becomes debris in the orbital it was in before it was destroyed.
 
-        The Light Bomber currently has 1 delta-vee left.
-        It spends it to scuttle in the first orbital of Research Station 2321, creating a dangerous debris field for any other ships that will occupy that orbital.
+        \fullsvg{scuttle.svg}{
+            The Light Bomber currently has 1 delta-vee left.
+            It spends it to scuttle in the first orbital of Research Station 2321, creating a dangerous debris field for any other ships that will occupy that orbital.
+        }
     \end{section}
 
     \begin{section}{Combat}
@@ -152,63 +192,19 @@ Place your orbit tracker at the top of your Homeworld.
         Combat is initiated between two spacecraft in orbit around the same asset.
         To begin combat, spend an amount of delta-vee that you wish to commit on the combat maneuver.
         The more delta-vee you spend, the higher your chances of making a hit during the combat.
-        Additionally, attackers get bonuses to their attack depending on their orbital position relative to their target.
+        Additionally, attackers that are above their target add 1 bonus delta-vee to their attack for each orbital between them and their target.
 
-        The Heavy Frigate spends 3 delta-vee to initiate combat with the Missile Frigate.
-        It thus starts with 3 attack delta-vee.
-        It gets an additional 2 bonus attack delta-vee because the Missile Frigate is 2 orbitals above the Heavy Frigate.
-
-        The Missile Frigate has 2 delta- vee remaining.
-        It’s defense delta-vee is thus 2.
-
-        The Heavy Frigate has 3 accuracy, listed on the card.
-
-        The Heavy Frigate rolls one six- sided dice for each accuracy it has.
-        It scores a hit for each roll less than or equal to attack delta-vee minus defense delta- vee.
-
-        For each hit scored the Heavy Frigate does 1 damage.
-
-        The Heavy Frigate rolls as shown, scoring 1 hit with the roll of 2.
-        It had to roll less than or equal to 5 - 2 = 3 to score a hit.
-        It thus does 1 damage.
+        \fullsvg{combat-attacker-above.svg}{Combat with the attacker above its target.}
     \end{section}
 
     \begin{section}{Combat (cont.)}
         \title
 
-        In the reverse scenario, the Missile Frigate initiates combat with the Heavy Frigate.
-        It spends all of it’s delta-vee to do so, giving it an attack delta-vee of 5.
+        Shooting is best done from above your opponent.
+        If you're attacking from below you will need to spend extra delta-vee to hit your target.
+        Attackers from below must spend one extra delta-vee to attack for each orbital between them and their target.
 
-        The Heavy Frigate has 1 delta- vee remaining.
-        It’s defense delta-vee is thus 1.
-
-        The Missile Frigate has 2 accuracy, listed on the card.
-        It also gets 2 bonus accuracy for being two orbitals higher than its target; for a total accuracy of 4.
-
-        The Missile Frigate rolls four six- sided dice corresponding to its accuracy.
-        To score a hit it needs to roll a 4 or less.
-
-        The Missile Frigate scores three hits, doing 3 total damage.
-        The Heavy Frigate already had 1 damage from a previous attack.
-        This puts its damage at 4.
-        This is equal to or greater than its armor of 4 so is enough to destroy the Heavy Frigate.
-        It is flipped over and becomes debris.
-    \end{section}
-
-    \begin{section}{Refit}
-        \title
-
-        A spacecraft in the lowest orbital of a friendly asset may refit.
-        Refitting a spacecraft swaps it with a new spacecraft from your hand.
-        The new spacecraft must be the same class and construction cost as the spacecraft being refitted.
-        Spacecraft can only refit if they have made no other maneuvers this turn.
-        The new spacecraft may not make any maneuvers.
-        The new spacecraft does not need to have the same population as the spacecraft being refitted and may put the total population over the population limit.
-
-        Heavy Corvette is in orbit around the lowest orbital of Moon 2222, a friendly asset.
-        The player has Light Corvette and Elite Fighter in their hand.
-        Since Heavy Corvette has made no maneuvers this turn, it may refit as an action and the player may put it back in their hand and play Light Corvette in its place.
-        They may not do this to play Elite Fighter because it is not the same ship class.
+        \fullsvg{combat-attacker-below.svg}{Combat with the attacker below its target.}
     \end{section}
 
     \begin{section}{Bombardment}
@@ -216,20 +212,13 @@ Place your orbit tracker at the top of your Homeworld.
 
         A spacecraft may initiate a bombardment maneuver by spending an amount of delta-vee.
         Bombardment targets the asset currently being orbited or an upgrade on the asset.
+        When an asset has damage on it equal to or greater than its bombardment resistance, it is considered bombarded.
+        Bombarded assets immediately swap control to the player who bombarded the asset.
+        Any upgrades that were attached to the asset are destroyed.
+        Any in progress construction on the asset is destroyed and removed from the game.
 
-        This Battleship has just moved into the second orbital of Corporate Base 3322.
-        It has 3 delta-vee remaining.
-        It spends 2 delta-vee to bombard Corporate Base 3322.
+        \fullsvg{bombardment.svg}{Asset bombardment.}
 
-        The Battleship has 2 base bombardment power.
-        It loses 1 bombardment power because there is 1 orbital between it and the asset; giving a total bombardment power of 1.
-        It receives 2 chances to bombard the asset because it spent 2 delta- vee on the maneuver.
-        Base bombardment power Corporate Base 3322 has a bombardment resistance of 3.
-
-        The Battleship rolls a six-sided dice for each delta-vee it spent on the maneuver.
-        For each roll that is higher than the bombardment resistance it does damage equal to its total bombardment power.
-
-        In this case it rolled 1 hit, and does 1 damage to Corporate Base 3322.
     \end{section}
 \end{supersection}
 
@@ -238,11 +227,7 @@ Place your orbit tracker at the top of your Homeworld.
 
 Destroyed spacecraft are flipped face down and become debris fields
 
-Destroyed assets are rotated upside-down.
-They may still be orbited and transferred to and from.
-They may not use abilities or contribute to construction, repair, or research.
-They do not contribute to population.
-Any spacecraft or upgrade under construction by the asset when it is destroyed is removed from the game.
+\fullsvg{destroyed-spacecraft.svg}{Flipping a spacecraft when it is destroyed}
 
 Destroyed upgrades are removed from the game.
 Cards that are removed from the game are placed face down out of the way of the playing field.
@@ -255,17 +240,14 @@ They may not be looked at by any player other than their owner.
 When a spacecraft is destroyed it becomes debris.
 At the end of your turn, each of your spacecraft with zero delta-vee in an orbital that contains debris takes 1 damage for each debris in an orbital.
 
-The Elite Fighter is in the first orbital of Research Station 3232 with zero delta-vee remaining.
-There are two pieces of debris in the same orbital.
-At the end of the turn, Elite Fighter will take two damage from the debris.
-As it has only 1 shield it will be destroyed and turn into debris itself.
+\fullsvg{debris.svg}{A spacecraft taking damage from debris}
 \end{section}
 
 \begin{section}{Research}
 \title
 
 After maneuvers have been finished any untapped asset of yours may be tapped to perform research.
-When you perform research with an asset, draw 1 card from you deck.
+When you perform research with an asset, draw 1 card from your deck.
 \end{section}
 
 \begin{section}{Repair}
@@ -274,8 +256,10 @@ When you perform research with an asset, draw 1 card from you deck.
 After research has been finished any untapped asset of yours may be tapped to perform repairs.
 When you perform repairs with an asset remove 1 damage from the asset or any upgrade on the asset.
 
-Earth has sustained 2 damage.
-It performs repairs during the turn to remove 1 damage, leaving it with a total of 1 damage on it.
+\fullsvg{repair.svg}{
+    Earth has sustained 2 damage.
+    It performs repairs during the turn to remove 1 damage, leaving it with a total of 1 damage on it.
+}
 \end{section}
 
 \begin{section}{Construction}
@@ -287,7 +271,7 @@ When an asset performs construction it allocates its full construction power to 
 \begin{easylist}[itemize]
     & A spacecraft under construction on the asset.
     & An upgrade under construction on the asset.
-    & An asset currently being constructed on the field.
+    & A friendly asset currently being constructed on the field.
 \end{easylist}
 
 \end{section}
@@ -297,15 +281,14 @@ When an asset performs construction it allocates its full construction power to 
 
 Spacecraft are constructed by placing them face down next to the asset.
 When construction power is allocated to it, place a number of construction counters on it equal to the construction power of the asset.
-When it has a number of construction counters on it equal to or greater than its construction cost then construction is completed and it enters play face up in the lowest orbital of the asset.
+During the construction phase, if a spacecraft has a number of construction counters on it equal to or greater than its construction cost then you may complete construction and it enters play face up in the lowest orbital of the asset.
+You do not have to complete construction of a spacecraft as soon as it is available.
 The asset must have a facility that matches the spacecraft class in order to allocate construction to it.
 Only one spacecraft may be under construction at a time.
 
-If a spacecraft could complete construction, but the combined population of all of your spacecraft currently in play and the new spacecraft would be greater than the combined population of all of your assets in play the spacecraft may not complete construction.
+If a spacecraft could complete construction, but the combined population of all of your spacecraft currently in play and the new spacecraft would be greater than the combined population of all of your assets in play, then the spacecraft may not complete construction.
 
-Earth is constructing a Missile Frigate, which requires 3 construction counters and a Frigate factory to allocate construction.
-It is tapped and places 5 construction counters on the Missile Frigate.
-The Missile Frigate completes construction and enters play.
+\fullsvg{constructing-spacecraft.svg}{A Missile Frigate under construction}
 \end{section}
 
 \begin{section}{Construction Upgrades}
@@ -313,47 +296,50 @@ The Missile Frigate completes construction and enters play.
 
 Upgrades are constructed by placing them face down under the asset.
 When construction power is allocated to it, place a number of construction counters on it equal to the construction power of the asset.
-When it has a number of construction counters on it equal to or greater than its construction cost then construction is completed and it enters play face up under the asset.
+During the construction phase, if an upgrade has a number of construction counters on it equal to or greater than its construction cost then you may complete construction and it enters play face up under the asset.
+You do not have to complete construction of an upgrade as soon as it is available.
 Multiple upgrades may be in play on an asset at the same time, though only one may be under construction at a time.
 
-Manufactory B is has the Cruiser Facilities upgrade in play.
-It is also constructing another upgrade.
-It allocates its construction power to the new upgrade, placing three construction counters on it.
-The new upgrade completes construction and comes into play under the existing upgrade.
-
+\fullsvg{constructing-upgrades.svg}{Booster Rockets under construction}
 \end{section}
 
 \begin{section}{Constructing Assets}
 \title
 
-Assets are constructed by placing them face down on your assets play area.
+Assets are constructed by placing them face down in the assets play area.
 Any constructed asset may allocate its construction power to the unconstructed asset.
 When construction power is allocated to it, place a number of construction counters on it equal to the construction power of the asset that allocated the construction power.
-When the new asset has construction counters on it equal to or greater than its construction cost it is flipped face up and enters play.
+During the construction phase, if an asset has construction counters on it equal to or greater than its construction cost it may complete construction and is flipped face up and enters play.
+You do not have to complete construction of an asset as soon as it is available.
 Multiple assets may be under construction at the same time.
 
-If an enemy spacecraft is in orbit around an asset, it may not allocate its construction to another asset.
+If an enemy spacecraft is in orbit around an asset, the asset is considered blockaded and it may not allocate its construction to another asset.
 
 Assets that are under construction are not in play and may not be orbited.
 
-A new asset is under construction in the asset play field.
-Manufactory B allocates its construction power to the new asset, placing 3 construction counters on it.
-It is flipped face up and enters play where it was placed.
+\fullsvg{constructing-assets.svg}{An asset under construction}
+
 \end{section}
 
 \begin{section}{Asset Anatomy}
 \title
+
+\fullsvg{asset-anatomy.svg}{Anatomy of Jupiter}
+
 \end{section}
 
 \begin{section}{Upgrade Anatomy}
 \title
+\fullsvg{upgrade-anatomy.svg}{Anatomy of Fortified Buildings}
 \end{section}
 
 \begin{section}{Spacecraft Anatomy}
 \title
+\fullsvg{spacecraft-anatomy.svg}{Anatomy of Light Bomber}
 \end{section}
 
 \begin{section}{Play Area}
 \title
+\fullsvg{play-area.svg}{}
 \end{section}
 \end{document}
