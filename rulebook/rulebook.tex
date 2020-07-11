@@ -169,7 +169,8 @@ Place your orbit tracker at the top of your respective Homeworlds.
 
         A transfer burn moves a spacecraft from the outermost orbital on the asset it is currently orbiting to the outermost orbital on another asset.
         The transfer burn may only be initiated when the spacecraft is in the outermost orbital of an asset.
-        The transfer burn costs an amount of delta-vee equal to the currently active orbit track value on the destination asset.
+        The transfer burn costs an amount of delta-vee equal to: the currently active orbit track value on the destination asset minus the currently active orbit track value on the starting asset.
+        A transfer burn always costs at least 3 delta-vee.
 
         \fullsvg{transfer-burn.svg}{A Fast Attack Craft performs a transfer burn.}
     \end{section}
