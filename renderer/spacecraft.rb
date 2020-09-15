@@ -19,8 +19,9 @@ class Spacecraft < Card
 
   def data
     Squib.csv file: @data_file
-  rescue
+  rescue => e
     puts "Could not load spacecraft file #{@data_file}"
+    puts e
     {}
   end
 

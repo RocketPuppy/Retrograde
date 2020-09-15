@@ -12,8 +12,9 @@ class Asset < Card
 
   def data
     Squib.csv file: @data_file
-  rescue
+  rescue => e
     puts "Could not load assets file #{@data_file}"
+    puts e
     {}
   end
 

@@ -20,8 +20,9 @@ class Upgrade < Card
 
   def data
     Squib.csv file: @data_file
-  rescue
+  rescue => e
     puts "Could not load upgrade file #{@data_file}"
+    puts e
     {}
   end
 
