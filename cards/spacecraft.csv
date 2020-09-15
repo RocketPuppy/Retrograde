@@ -1,12 +1,43 @@
-name,class,accuracy,armor,delta-vee,population,construction,bombardment,abilities
-L.A.V.,Fighter,1,1,6,1,1,0,
-Fast Attack Craft,Fighter,1,1,8,1,1,0,"Fast Attack Craft can only attack once per turn"
-Heavy Assault Vehicle,Fighter,1,3,2,1,2,0,
-Elite Fighter,Fighter,3,1,4,2,2,0,
-Light Corvette,Corvette,2,2,5,2,2,0,
-Heavy Corvette,Corvette,2,3,3,2,2,0,
-Light Bomber,Corvette,0,3,4,2,3,1,
-Missile Frigate,Frigate,2,2,5,4,3,1,
-Destroyer,Frigate,1,3,3,4,4,2,
-Heavy Frigate,Frigate,3,4,3,4,3,1,
-Battleship,Cruiser,3,4,6,6,5,2,
+name,class,accuracy,armor,delta-vee,population,construction,bombardment,faction,abilities
+NexusCorp Subjugator,Cruiser,4,6,5,10,24,8,Earth,"When NexusCorp Subjugator successfully bombards an asset, place a Raze token on it. The asset is no longer under the control of any player."
+NexusCrop Decimator,Cruiser,5,6,4,8,18,5,Earth,"When NexusCorp Decimator rolls a 1 during an attack roll, it scores a hit."
+Blupo Tug,Cruiser,1,4,7,6,15,1,Earth,"When BluPo Tug transfers to another asset, you may choose a spacecraft in the same orbital as BluPo Tug. If you do, that spacecraft may attempt a transfer to the same asset as if it had 2 extra delta-vee."
+Arven Sword 1.0,Fighter,1,1,8,2,3,0,Earth,
+Arven Scythe 1.0,Fighter,0,1,7,2,4,1,Earth,
+Terra Hammer,Fighter,3,2,9,2,4,0,Earth,
+Terra Sledge,Fighter,2,2,7,3,5,1,Earth,
+Terra Anvil,Fighter,0,2,7,3,5,2,Earth,
+War7 Photon,Fighter,3,3,5,0,2,0,Earth,Drone. Drones cannot transfer to another asset. War7 Photon may not maneuver unless War7 Ansible is constructed on the asset it is orbiting.
+Spaceforce Katana,Corvette,3,4,6,0,3,0,Earth,Drone. Drones cannot transfer to another asset. Spaceforce Katana may not maneuver unless Spaceforce Ansible is constructed on the asset it is orbiting.
+Spaceforce Naginata,Corvette,4,5,4,0,3,0,Earth,Drone. Drones cannot transfer to another asset. Spaceforce Naginata may not maneuver unless Spaceforce Ansible is constructed on the asset it is orbiting.
+Red+ Mercy,Frigate,0,4,6,4,8,0,Earth,When a spacecraft in the same orbital as Red+ Mercy would take damage. Red+ Mercy takes that damage instead.
+The Waveguide,Corvette,0,2,5,5,8,0,Earth,Spacecraft within 1 orbital of The Waveguide have +1 accuracy.
+Pollen,Fighter,0,1,15,1,4,0,Venus,"If Pollen transfers to an asset, on the next turn friendly spacecraft around that asset have +1 accuracy. This effect does not stack."
+Slingshot,Fighter,0,1,14,1,5,0,Venus,"If Slingshot transfers to an asset, on the next turn your transfers to that asset cost 2 less delta-vee. This effect does not stack."
+Ground Spore,Fighter,0,1,10,1,4,1,Venus,Troop pod. Ground Spore is destroyed after a successful attack. Gound Spore does not leave debris when it is destroyed. Ground Spore cannot transfer.
+Sky Spore,Fighter,1,1,10,1,4,0,Venus,"Troop pod. Sky Spore is destroyed after a successful attack. Sky Spore does not leave debris when it is destroyed. Sky Spore cannot transfer. If a spacecraft would be destroyed by Sky Spore, then it transfers control to you (retaining its damage tokens) instead of being destroyed."
+Envoy,Corvette,3,2,8,4,8,2,Venus,
+Laser Broom,Corvette,0,5,6,2,6,0,Venus,Maneuver 2 delta-vee: clear one piece of debris from the orbital currently occupied by Laser Broom.
+Floating Screen,Frigate,0,8,0,1,4,0,Venus,"Floating Screen enters play in the highest orbital. When the asset orbited by Floating Screen is bombarded, if Floating Screen is not above the bombarding spacecraft, then Floating Screen takes the damage instead of the asset. Floating Screen does not regenerate armor."
+Mushroom,Frigate,2,5,6,4,9,0,Venus,"When Mushroom transfers to another asset, up to three Troop Pods may transfer with Mushroom."
+Dispersal Unit,Cruiser,2,7,4,9,16,1,Venus,Dispersal Unit may initiate construction of Fighter or Corvette spacecraft.
+Col. Crossman,Corvette,1,1,10,1,9,0,Saturn,
+Col. Fortier,Corvette,1,2,8,1,10,0,Saturn,
+Col. Genovesi,Corvette,2,1,9,2,11,0,Saturn,
+Col. Angelica,Corvette,2,2,7,1,9,0,Saturn,
+Col. Anderson,Corvette,2,2,7,2,10,0,Saturn,
+Col. Chatterjee,Corvette,3,2,6,2,11,0,Saturn,
+Col. Yamamoto,Corvette,0,1,8,2,9,2,Saturn,
+Col. Hiroshi,Corvette,1,1,8,3,10,2,Saturn,
+Col. Jung-Hee,Corvette,1,2,7,3,11,3,Saturn,
+Col. Richlieu,Corvette,0,2,9,3,9,0,Saturn,"When Col. Richlieu transfers or burns, you may choose a friendly spacecraft in the same orbital as Col. Richlieu. If you do, the chosen spacecraft may spend 3 delta-vee to move to the same location as Col. Richlieu."
+Col. Jiao,Corvette,0,2,10,3,10,0,Saturn,"When Col. Jiao transfers or burns, you may choose a friendly spacecraft in the same orbital as Col. Jiao. If you do, the chosen spacecraft may spend 3 delta-vee to move to the same location as Col. Jiao."
+Col. Morozova,Corvette,0,2,9,3,11,0,Saturn,"When Col. Morozova transfers or burns, you may choose a friendly spacecraft in the same orbital as Col. Morozova. If you do, the chosen spacecraft may spend 4 delta-vee to move to the same location as Col. Morozova."
+Col. Helmut,Corvette,0,4,5,1,9,0,Saturn,The first hit scored during combat with a friendly ship around this asset is scored against this one.
+Col. Tejada,Corvette,0,4,6,1,10,0,Saturn,The first hit scored during combat with a friendly ship around this asset is scored against this one.
+Col. Balewa,Corvette,1,5,5,1,11,0,Saturn,The first hit scored during combat with a friendly ship around this asset is scored against this one.
+Cpt. Mahmoud,Frigate,1,3,5,4,15,0,Saturn,Maneuver 1 delta-vee: Target spacecraft in the same orbital as Cpt. Mahmoud has +1 armor until the end of the turn. This may not be used on the same spacecraft twice in one turn.
+Cpt. Kut,Frigate,1,4,4,3,15,0,Saturn,Maneuver 1 delta-vee: Target spacecraft in the same orbital as Cpt. Kut has +1 armor until the end of the turn. This may not be used on the same spacecraft twice in one turn.
+Cpt. Warner,Frigate,1,3,6,4,15,0,Saturn,Maneuver 1 delta-vee: Target spacecraft in the same orbital as Cpt. Warner has +2 delta-vee until the end of the turn. This may not be used on the same spacecraft twice in one turn.
+Cpt. Griffith,Frigate,1,4,5,2,15,0,Saturn,Maneuver 1 delta-vee: Target spacecraft in the same orbital as Cpt. Griffith has +2 delta-vee until the end of the turn. This may not be used on the same spacecraft twice in one turn.
+Adm. Nguyen,Cruiser,5,6,4,9,22,2,Saturn,"When Adm. Nguyen would transfer to another asset you may choose up to three fighter or corvette spacecraft in the same orbital as Adm. Nguyen. If you do, then the chosen spacecraft transfer to the new asset with Adm. Nguyen."

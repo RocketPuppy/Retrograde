@@ -1,15 +1,15 @@
-name,construction,bombardment,abilities
-"Missile Defense System",4,3,"Maneuver: Attack a spacecraft in orbit around this asset. The attack has 6 :delta-vee: and 1 :accuracy:. This may only be done once per turn."
-"Debris Sweeper",3,3,"At the beginning of your turn, remove two debris in orbit around this asset."
-"Debris Reclamation",3,3,"When this asset is tapped for construction you may remove one debris in orbit around this asset. If you do, this asset gains +1 :construction: production until the end of this turn."
-"University",3,2,"When this asset is tapped for research you may draw two cards instead of one."
-"Espionage Agency",4,2,"At the beginning of your turn you may look at the top card of the opposing player's deck."
-"Booster Rockets",2,2,"When a spacecraft enters play around this asset it may enter in any orbital."
-"Cruiser Facilities",4,3,"This asset may construct :cruiser: spacecraft."
-"Frigate Facilities",4,3,"This asset may construct :frigate: spacecraft."
-"Corvette Facilities",4,3,"This asset may construct :corvette: spacecraft."
-"Fighter Facilities",4,3,"This asset may construct :fighter: spacecraft."
-"Fortified Buildings",2,3,"This asset gains +2 :bombardment:."
-"Accelerated Assembly Lines",4,2,"Spacecraft constructed by this asset cost 2 fewer :construction."
-"Colonization Training",4,2,"Assets constructed by this asset cost 2 fewer :construction:."
-"Debris screen",3,2,"All :burn:s to this asset cost one more :delta-vee:"
+name,construction,bombardment,faction,abilities
+War7 Ansible,10,2,Earth,The population capacity of this asset is decreased by 1 for every 2 War7 drones in orbit around this asset.
+Spaceforce Ansible,12,2,Earth,The population capacity of this asset is decreased by 1 for every Spaceforce drone in orbit around this asset.
+Corporate Recruitement Centers,5,1,Earth,The population capacity of this asset is increased by 3.
+Waveguide R&D,8,1,Earth,You may draw 1 more card when this asset performs research.
+PopFixx Boosters,7,1,Earth,Newly constructed spacecraft may enter play in any orbital of this asset.
+Refitting Station,5,3,Saturn,"Instead of allocating construction on this asset, you may swap a spacecraft in orbit with one from your hand. The new spacecraft must have the same class and construction cost as the old one."
+Debris Cleaner,4,2,Saturn,"Maneuver, Tap: Remove one piece of debris in orbit around this asset."
+Cannibalized Construction Yards,4,2,Saturn,"When allocating construction on this asset you may choose a friendly spacecraft in orbit. If you do, deal X damage to that spacecraft and gain X construction power for this turn."
+Repurposed Orbital Radar,8,1,Saturn,Friendly spacecraft gain 2 defense delta-vee during combat with an attacker in a higher orbital
+Parallel Construction Yard,6,2,Saturn,You may initiate construction of 1 additional spacecraft while a spacecraft is being constructed on this asset.
+Fount of Locomotion,9,1,Venus,Friendly spacecraft do not use delta-vee when transferring between orbitals on this asset.
+Thorns,8,2,Venus,"At the end of your opponent's turn, if an enemy spacecraft is in the lowest orbital of this asset, deal 1 damage to it."
+Billboard,4,1,Venus,You must target Billboard for bombardment if it is installed.
+Clairvoyant Agents,10,1,Venus,At the beginning of your turn you may look at the top card of the opposing player's deck.
