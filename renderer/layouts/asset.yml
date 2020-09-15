@@ -97,6 +97,15 @@ title:
   x: += .125in
   y: *minus-title-offset
 
+faction:
+  extends:
+    - main-width
+    - main-bottom
+    - main-left
+  align: right
+  x: += .125in
+  y: *minus-title-offset
+
 orbital-icon:
   width: .2in
   height: .2in

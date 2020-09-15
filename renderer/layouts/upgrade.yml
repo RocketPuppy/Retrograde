@@ -44,6 +44,16 @@ title:
   width: *title-width
   height: *title-height
 
+faction:
+  extends:
+    - main-bottom
+    - main-left
+  align: right
+  x: += .125in
+  y: *minus-title-height
+  width: *title-width
+  height: *title-height
+
 construction:
   extends:
     - main-right

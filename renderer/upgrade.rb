@@ -41,9 +41,15 @@ class Upgrade < Card
     bombardment api, data['bombardment'], index
 
     abilities api, data['abilities'], index
+
+    faction api, data['faction'], index
   end
 
   private
+
+  def faction(api, faction_data, index)
+    api.text layout: 'faction', str: faction_data, range: index
+  end
 
   def title(api, title_data, index)
     api.text layout: 'title', str: title_data, range: index
