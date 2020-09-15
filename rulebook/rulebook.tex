@@ -213,9 +213,10 @@ Place your orbit tracker at the top of your respective Homeworlds.
 
         A spacecraft may initiate a bombardment maneuver by spending an amount of delta-vee.
         Bombardment targets the asset currently being orbited or an upgrade on the asset.
-        When an asset has damage on it equal to or greater than its bombardment resistance, it is considered bombarded.
-        Bombarded assets immediately swap control to the player who bombarded the asset.
-        Any upgrades that were attached to the asset are destroyed.
+        When an asset has damage on it equal to or greater than its bombardment resistance, it is considered captured.
+        Captured assets immediately swap control to the player who captured the asset.
+        The asset retains damage counters such that its damage is one less than its bombardment resistance.
+        Any upgrades that were attached to the asset are destroyed and removed from the game.
         Any in progress construction on the asset is destroyed and removed from the game.
 
         \fullsvg{bombardment.svg}{Asset bombardment.}
