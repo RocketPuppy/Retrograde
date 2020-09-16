@@ -1,4 +1,4 @@
-with (import <nixpkgs> {});
+with (import ./nixpkgs.nix {});
 rec {
   squib = callPackage ./squib {
     inherit (xorg) libpthreadstubs libXdmcp;
