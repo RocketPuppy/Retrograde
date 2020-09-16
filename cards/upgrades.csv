@@ -1,15 +1,15 @@
 name,construction,bombardment,faction,abilities
-War7 Ansible,10,2,Earth,The population capacity of this asset is decreased by 1 for every 2 War7 drones in orbit around this asset.
-Spaceforce Ansible,12,2,Earth,The population capacity of this asset is decreased by 1 for every Spaceforce drone in orbit around this asset.
-Corporate Recruitement Centers,5,1,Earth,The population capacity of this asset is increased by 3.
-Waveguide R&D,8,1,Earth,You may draw 1 more card when this asset performs research.
-PopFixx Boosters,7,1,Earth,Newly constructed spacecraft may enter play in any orbital of this asset.
-Refitting Station,5,3,Saturn,"Instead of allocating construction on this asset, you may swap a spacecraft in orbit with one from your hand. The new spacecraft must have the same class and construction cost as the old one."
-Debris Cleaner,4,2,Saturn,"Maneuver, Tap: Remove one piece of debris in orbit around this asset."
-Cannibalized Construction Yards,4,2,Saturn,"When allocating construction on this asset you may choose a friendly spacecraft in orbit. If you do, deal X damage to that spacecraft and gain X construction power for this turn."
-Repurposed Orbital Radar,8,1,Saturn,Friendly spacecraft gain 2 defense delta-vee during combat with an attacker in a higher orbital
-Parallel Construction Yard,6,2,Saturn,You may initiate construction of 1 additional spacecraft while a spacecraft is being constructed on this asset.
-Fount of Locomotion,9,1,Venus,Friendly spacecraft do not use delta-vee when transferring between orbitals on this asset.
-Thorns,8,2,Venus,"At the end of your opponent's turn, if an enemy spacecraft is in the lowest orbital of this asset, deal 1 damage to it."
-Billboard,4,1,Venus,You must target Billboard for bombardment if it is installed.
-Clairvoyant Agents,10,1,Venus,At the beginning of your turn you may look at the top card of the opposing player's deck.
+War7 Ansible,10,2,E,The population capacity of this asset is decreased by 1 for every 2 War7 drones in orbit around this asset.
+Spaceforce Ansible,12,2,E,The population capacity of this asset is decreased by 1 for every Spaceforce drone in orbit around this asset.
+Corporate Recruitement Centers,5,1,E,The population capacity of this asset is increased by 3.
+Waveguide R&D,8,1,E,You may draw 1 more card when this asset performs research.
+PopFixx Boosters,7,1,E,Newly constructed spacecraft may enter play in any orbital of this asset.
+Refitting Station,5,3,S,"Instead of allocating construction on this asset, you may swap a spacecraft in orbit with one from your hand. The new spacecraft must have the same class and construction cost as the old one."
+Debris Cleaner,4,2,S,"Maneuver, Tap: Remove one piece of debris in orbit around this asset."
+Cannibalized Construction Yards,4,2,S,"When allocating construction on this asset you may choose a friendly spacecraft in orbit. If you do, deal X damage to that spacecraft and gain X construction power for this turn."
+Repurposed Orbital Radar,8,1,S,Friendly spacecraft gain 2 defense delta-vee during combat with an attacker in a higher orbital
+Parallel Construction Yard,6,2,S,You may initiate construction of 1 additional spacecraft while a spacecraft is being constructed on this asset.
+Fount of Locomotion,9,1,V,Friendly spacecraft do not use delta-vee when transferring between orbitals on this asset.
+Thorns,8,2,V,"At the end of your opponent's turn, if an enemy spacecraft is in the lowest orbital of this asset, deal 1 damage to it."
+Billboard,4,1,V,You must target Billboard for bombardment if it is installed.
+Clairvoyant Agents,10,1,V,At the beginning of your turn you may look at the top card of the opposing player's deck.
