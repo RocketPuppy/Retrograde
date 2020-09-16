@@ -8,7 +8,7 @@ title:
   x: += .375in
   y: += .125in
   align: left
-  font_size: 8
+  font_size: 7
 
 faction:
   extends:
@@ -20,7 +20,7 @@ faction:
   x: += .375in
   y: += .125in
   align: right
-  font_size: 8
+  font_size: 7
 
 spacecraft-class:
   extends:

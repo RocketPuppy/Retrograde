@@ -43,6 +43,7 @@ title:
   y: *minus-title-height
   width: *title-width
   height: *title-height
+  font_size: 7
 
 faction:
   extends:
@@ -53,6 +54,7 @@ faction:
   y: *minus-title-height
   width: *title-width
   height: *title-height
+  font_size: 7
 
 construction:
   extends:

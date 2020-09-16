@@ -94,6 +94,7 @@ title:
     - main-bottom
     - main-left
   align: left
+  font_size: 7
   x: += .125in
   y: *minus-title-offset
 
@@ -103,6 +104,7 @@ faction:
     - main-bottom
     - main-left
   align: right
+  font_size: 7
   x: += .125in
   y: *minus-title-offset
 
@@ -204,3 +206,4 @@ abilities:
   height: .7in
   x: += .52in
   y: -= .8in
+  font_size: 4.5
