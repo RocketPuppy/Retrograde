@@ -9,7 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v10
+    - uses: cachix/install-nix-action@v12
+      with:
+        nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/archive/fb6c3a6831ca5c5a9d923fed1db3c2006a118681.tar.gz
     - name: Build cards
       run: |
         OUTS=$(nix-build default.nix -A rendered.cards.all --no-out-link)
