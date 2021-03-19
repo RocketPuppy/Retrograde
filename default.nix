@@ -29,7 +29,7 @@ rec {
       all = builtins.attrValues import;
     };
   };
-  rulebook = callPackage ./rulebook {
-    cards = rendered.cards.all;
-  };
+  #rulebook = callPackage ./rulebook {
+  #  cards = rendered.cards.all;
+  #};
 }
