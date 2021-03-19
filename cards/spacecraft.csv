@@ -21,7 +21,7 @@ Laser Broom,Corvette,0,5,6,2,6,0,V,Maneuver 2 delta-vee: clear one piece of debr
 Floating Screen,Frigate,0,8,0,1,4,0,V,"Floating Screen enters play in the highest orbital. When the asset orbited by Floating Screen is bombarded, if Floating Screen is not above the bombarding spacecraft, then Floating Screen takes the damage instead of the asset. Floating Screen does not regenerate armor."
 Mushroom,Frigate,2,5,6,4,9,0,V,"When Mushroom transfers to another asset, up to three Troop Pods may transfer with Mushroom."
 Dispersal Unit,Cruiser,2,7,4,9,16,1,V,Dispersal Unit may initiate construction of Fighter or Corvette spacecraft.
-Col. Crossman,Corvette,1,1,10,1,9,0,S
+Col. Crossman,Corvette,1,1,10,1,9,0,S,
 Col. Fortier,Corvette,1,2,8,1,10,0,S,
 Col. Genovesi,Corvette,2,1,9,2,11,0,S,
 Col. Angelica,Corvette,2,2,7,1,9,0,S,
