@@ -127,16 +127,16 @@ If a card contradicts the rules, follow the card.
 
 # Play Area
 
-![Play Area](rulebook/svgs/play-area.svg)
+![Play Area](rulebook/svg/play-area.svg)
 
 # Asset Anatomy
 
-![Asset Anatomy](rulebook/svgs/asset-anatomy.svg)
+![Asset Anatomy](rulebook/svg/asset-anatomy.svg)
 
 # Upgrade Anatomy
 
-![Upgrade Anatomy](rulebook/svgs/upgrade-anatomy.svg)
+![Upgrade Anatomy](rulebook/svg/upgrade-anatomy.svg)
 
 # Spacecraft Anatomy
 
-![Spacecraft Anatomy](rulebook/svgs/spacecraft-anatomy.svg)
+![Spacecraft Anatomy](rulebook/svg/spacecraft-anatomy.svg)
