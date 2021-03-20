@@ -55,7 +55,7 @@ If a card contradicts the rules, follow the card.
       - Spacecraft-to-spacecraft
         - Attacker orbital delta-vee minus defender orbital delta-vee, or 1. Whichever is greater.
       - Spacecraft-to-asset
-        - Total of all orbitals between the attacker and the defender, or 1. Whichever is greater.
+        - Lowest orbital delta-vee minus attacker orbital delta-vee, or 1. Whichever is greater.
     2. Calculate chances
       - Spacecraft-to-spacecraft
         - Accuracy
