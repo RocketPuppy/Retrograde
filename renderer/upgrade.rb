@@ -36,7 +36,7 @@ class Upgrade < Card
 
   # Takes the api object defining the Squib DSL and the deck data to render
   def render(api, data, index = :all)
-    title api, data['name'], index
+    title api, data['name'], data['unique'], index
 
     construction api, data['construction'], index
     bombardment api, data['bombardment'], index
@@ -50,10 +50,6 @@ class Upgrade < Card
 
   def faction(api, faction_data, index)
     api.text layout: 'faction', str: faction_data, range: index
-  end
-
-  def title(api, title_data, index)
-    api.text layout: 'title', str: title_data, range: index
   end
 
   def bombardment(api, bombardment_data, index)

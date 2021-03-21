@@ -7,8 +7,7 @@ If a card contradicts the rules, follow the card.
 - Choose a Homeworld to serve as your identity.
 - Arrange 40 assets, upgrades, and spacecraft in any order to form your deck.
 - You may include up to 10 cards from a faction different than your Homeworld.
-- You may include multiple copies of spacecraft and upgrades.
-- You may not include more than one copy of an asset.
+- You may include multiple copies of each card unless it is labelled as unique. Uniqueness is marked by a ◆ next to the card name.
 - Do not shuffle.
 
 # Pre-game

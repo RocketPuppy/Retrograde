@@ -30,7 +30,7 @@ class Asset < Card
   def render(api, data, index = :all)
     api.rect layout: 'main', range: index
 
-    title api, data['name'], index
+    title api, data['name'], data['unique'], index
 
     orbits api, data['orbit'].map { |x| x == nil ? [nil, nil, nil, nil] : x.split(",") }.transpose, index
 
@@ -55,10 +55,6 @@ class Asset < Card
 
   def faction(api, faction_data, index)
     api.text layout: 'faction', str: faction_data, range: index
-  end
-
-  def title(api, title_data, index)
-    api.text layout: 'title', str: title_data, range: index
   end
 
   def homeworld(api, homeworld_data, index)

@@ -3,6 +3,16 @@ require 'squib'
 # Base layout methods for a card regardless of type. These methods do the same
 # thing regardless of card type
 class Card
+  def title(api, title_data, unique_data, index)
+    api.text(layout: 'title', str: title_data.zip(unique_data).map { |x| 
+      if x[1] == 'Y' then
+        "◆ #{x[0]}"
+      else
+        x[0]
+      end
+    }, range: index)
+  end
+
   def abilities(api, ability_data, index)
     api.text layout: 'abilities', range: index, str: ability_data, markup: true do |embed|
       embed.svg layout: 'ability-icon', key: ':accuracy:', file: 'icons/accuracy.svg'
