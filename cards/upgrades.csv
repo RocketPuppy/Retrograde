@@ -13,4 +13,4 @@ Fount of Locomotion,N,9.00,1.00,V,Friendly spacecraft do not use delta-vee when 
 Thorns,N,8.00,2.00,V,"At the end of your opponent's turn, if an enemy spacecraft is in the lowest orbital of this asset, deal 1 damage to it."
 Billboard,N,4.00,1.00,V,You must target Billboard for bombardment if it is installed.
 Clairvoyant Agents,N,10.00,1.00,V,At the beginning of your turn you may look at the top card of the opposing player's deck.
-"12,000,000 Minds",N,6.00,1.00,E,"When this asset taps to draw cards, shuffle your deck before drawing."
+"12,000,000,000 Minds",N,6.00,1.00,E,"When this asset taps to draw cards, shuffle your deck before drawing."
