@@ -26,7 +26,7 @@ let
       export PATH=$coreutils/bin:$PATH
       mkdir $out
       echo "name" > "$out/$cardname.csv"
-      echo $cardname >> "$out/$cardname.csv"
+      echo \"$cardname\" >> "$out/$cardname.csv"
     '')];
     cardname = card-name;
     inherit coreutils;
