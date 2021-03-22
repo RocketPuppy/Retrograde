@@ -1,29 +1,29 @@
 name,unique,population,factory,construction,homeworld,classes,orbitals,orbit,bombardment,abilities
-Saturn: Ring Divers,Y,12.00,6.00,,Y,"Corvette,Frigate","16,12,9,6,4","20,20,20,20",4.00,Ignore the first piece of debris in an orbital.
-Saturn: Modular Spacecraft,Y,12.00,6.00,,Y,"Corvette,Frigate","16,12,9,6,4","20,20,20,20",4.00,"Instead of allocating construction, you may swap a spacecraft in orbit around a friendly asset with one from your hand. The new spacecraft must have the same class and construction cost as the old one."
-Iapetus,Y,6.00,4.00,4.00,,Fighter,"6,3,1","18,18,18,18",2.00,
-Titan,Y,8.00,3.00,5.00,,Frigate,"6,3,1","18,18,18,18",2.00,
-Rhea,Y,8.00,2.00,4.00,,Corvette,"6,3,1","18,18,18,18",1.00,
-Hyperion,Y,10.00,4.00,7.00,,Cruiser,"5,3,1","18,18,18,18",3.00,
-Enceladus,Y,4.00,2.00,3.00,,Fighter,"5,3,1","19,19,19,19",1.00,
-Dione,Y,4.00,3.00,4.00,,Corvette,"5,3,1","19,19,19,19",2.00,
-Mars,Y,12.00,4.00,7.00,,"Frigate,Cruiser","8,6,4,3","9,9,9,9",4.00,
-Phobos,Y,4.00,2.00,3.00,,Fighter,"2,1","8,8,8,8",2.00,
-Deimos,Y,4.00,2.00,3.00,,Corvette,"2,1","7,7,7,7",1.00,
-Mercury,Y,6.00,4.00,4.00,,Fighter,"5,3,1","1,1,1,1",1.00,
-Jupiter,Y,20.00,8.00,16.00,,"Fighter,Corvette,Frigate,Cruiser","19,14,10,6,3,1","15,15,15,15",5.00,
-Io,Y,4.00,2.00,3.00,,Fighter,"7,4,1","14,14,14,14",3.00,
-Europa,Y,6.00,3.00,4.00,,Corvette,"7,4,1","14,14,14,14",2.00,
-Ganymede,Y,8.00,4.00,5.00,,Cruiser,"6,3,1","13,13,13,13",2.00,
-Callisto,Y,10.00,5.00,6.00,,Cruiser,"5,3,1","12,12,12,12",3.00,
-Ceres,Y,6.00,3.00,5.00,,Frigate,"4,2","12,13,12,13",1.00,
-Vesta,Y,6.00,2.00,4.00,,Frigate,"3,1","13,14,13,14",2.00,
-Earth: Loyal to Humanity,Y,16.00,5.00,,Y,"Fighter,Cruiser","10,6,3,1","7,7,7,7",5.00,"When a friendly asset is bombarded, you may choose a friendly spacecraft in orbit, move it to the lowest orbital, and destroy it. If you do, reduce the bombardment damage to zero."
-Earth: Overpopulated,Y,24.00,5.00,,Y,"Fighter,Cruiser","10,6,3,1","7,7,7,7",5.00,
-Luna,Y,8.00,3.00,4.00,,Frigate,"2,1","6,6,6,6,",2.00,
-Venus: Shock troops,Y,8.00,6.00,,Y,"Fighter,Frigate","9,6,3,1","4,4,4,4",4.00,"When a friendly spacecraft transfers, a troop pod in orbit around the asset may transfer with it."
-Venus: Coup De Grace,Y,8.00,6.00,,Y,"Fighter,Frigate","9,6,3,1","4,4,4,4",4.00,"When you successfully bombard an asset, any spacecraft under construction are not destroyed and become under your control."
-Stellar Gate,Y,,,,,,"6,3,1","12,12,12,12",6.00,"Stellar Gate begins play on the field, uncontrolled by either player. At the beginning of your turn, if Stellar Gate has been under your control for four consecutive turns, then you win the game. Friendly spacecraft in orbit around Stellar Gate may transfer to any other asset without paying the delta-vee cost. Upgrades cannot be constructed on Stellar Gate."
+Saturn: Ring Divers,Y,12,6,,Y,"Corvette,Frigate","16,12,9,6,4","20,20,20,20",4,Ignore the first piece of debris in an orbital.
+Saturn: Modular Spacecraft,Y,12,6,,Y,"Corvette,Frigate","16,12,9,6,4","20,20,20,20",4,"Instead of allocating construction, you may swap a spacecraft in orbit around a friendly asset with one from your hand. The new spacecraft must have the same class and construction cost as the old one."
+Iapetus,Y,6,4,4,,Fighter,"6,3,1","18,18,18,18",2,
+Titan,Y,8,3,5,,Frigate,"6,3,1","18,18,18,18",2,
+Rhea,Y,8,2,4,,Corvette,"6,3,1","18,18,18,18",1,
+Hyperion,Y,10,4,7,,Cruiser,"5,3,1","18,18,18,18",3,
+Enceladus,Y,4,2,3,,Fighter,"5,3,1","19,19,19,19",1,
+Dione,Y,4,3,4,,Corvette,"5,3,1","19,19,19,19",2,
+Mars,Y,12,4,7,,"Frigate,Cruiser","8,6,4,3","9,9,9,9",4,
+Phobos,Y,4,2,3,,Fighter,"2,1","8,8,8,8",2,
+Deimos,Y,4,2,3,,Corvette,"2,1","7,7,7,7",1,
+Mercury,Y,6,4,4,,Fighter,"5,3,1","1,1,1,1",1,
+Jupiter,Y,20,8,16,,"Fighter,Corvette,Frigate,Cruiser","19,14,10,6,3,1","15,15,15,15",5,
+Io,Y,4,2,3,,Fighter,"7,4,1","14,14,14,14",3,
+Europa,Y,6,3,4,,Corvette,"7,4,1","14,14,14,14",2,
+Ganymede,Y,8,4,5,,Cruiser,"6,3,1","13,13,13,13",2,
+Callisto,Y,10,5,6,,Cruiser,"5,3,1","12,12,12,12",3,
+Ceres,Y,6,3,5,,Frigate,"4,2","12,13,12,13",1,
+Vesta,Y,6,2,4,,Frigate,"3,1","13,14,13,14",2,
+Earth: Loyal to Humanity,Y,16,5,,Y,"Fighter,Cruiser","10,6,3,1","7,7,7,7",5,"When a friendly asset is bombarded, you may choose a friendly spacecraft in orbit, move it to the lowest orbital, and destroy it. If you do, reduce the bombardment damage to zero."
+Earth: Overpopulated,Y,24,5,,Y,"Fighter,Cruiser","10,6,3,1","7,7,7,7",5,
+Luna,Y,8,3,4,,Frigate,"2,1","6,6,6,6,",2,
+Venus: Shock troops,Y,8,6,,Y,"Fighter,Frigate","9,6,3,1","4,4,4,4",4,"When a friendly spacecraft transfers, a troop pod in orbit around the asset may transfer with it."
+Venus: Coup De Grace,Y,8,6,,Y,"Fighter,Frigate","9,6,3,1","4,4,4,4",4,"When you successfully bombard an asset, any spacecraft under construction are not destroyed and become under your control."
+Stellar Gate,Y,,,,,,"6,3,1","12,12,12,12",6,"Stellar Gate begins play on the field, uncontrolled by either player. At the beginning of your turn, if Stellar Gate has been under your control for four consecutive turns, then you win the game. Friendly spacecraft in orbit around Stellar Gate may transfer to any other asset without paying the delta-vee cost. Upgrades cannot be constructed on Stellar Gate."
 Asteroid Outpost,N,2,2,3,,Fighter,1,"14,17,15,13",1,
 Asteroid Outpost,N,2,2,4,,Corvette,1,"10,13,13,10",1,
 Isolated Shipyard,N,3,2,5,,Frigate,1,"5,5,5,5",2,
