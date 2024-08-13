@@ -6,7 +6,7 @@ rec {
     rubyPackages = rubyPackages_2_6;
   };
   cards = callPackage ./cards {};
-  deck-data = callPackage ./decks/files.nix {};
+  deck-data = callPackage ./decks/files.nix { inherit cards; };
   decks = callPackage ./decks {
     inherit deck-data cards;
   };

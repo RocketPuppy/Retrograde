@@ -5,6 +5,7 @@ in
 derivation {
   name = "retrograde-decks-${name}";
   system = builtins.currentSystem;
+  deck-name = name;
   builder = "${bash}/bin/bash";
   args = [(builtins.toFile "file-builder" ''
     export PATH=$coreutils/bin:$gnugrep/bin

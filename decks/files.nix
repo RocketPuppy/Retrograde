@@ -1,7 +1,14 @@
-{ lib, bash, coreutils }:
+{ lib, bash, coreutils, gnugrep, cards }:
 let
   src = ./.;
   files = builtins.filter (lib.strings.hasSuffix ".csv") (builtins.attrNames (builtins.readDir src));
+  mk-type-deck = import ./type-deck.nix;
+  type-files = builtins.map (
+    type: mk-type-deck {
+      name = type;
+      cards = builtins.getAttr type cards.byType;
+      inherit bash coreutils gnugrep;
+    }) (builtins.attrNames cards.byType);
   fileToDrv = file:
     let
       storeFile = builtins.toFile file (builtins.readFile (src + ("/" + file)));
@@ -15,4 +22,4 @@ let
       inherit storeFile coreutils;
     };
 in
-builtins.map fileToDrv files
+(builtins.map fileToDrv files) ++ type-files

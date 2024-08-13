@@ -17,4 +17,4 @@ builtins.map (
     card-set = cards.byName;
     data-file-types = builtins.attrNames cards.byType;
     inherit bash coreutils;
-  }) (deck-data ++ type-decks)
+  }) deck-data
