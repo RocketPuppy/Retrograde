@@ -11,6 +11,7 @@ derivation {
     CARDS=($cards)
     mkdir $out
     cat ''${CARDS[0]} | head -n1 > $out/$type.csv
+    touch card-data.csv
     for f in $cards; do
       cat "$f" | tail -n +2 >> card-data.csv
     done
