@@ -1,11 +1,8 @@
 title:
   extends:
     - safe-top
-    - safe-width
     - safe-left
-  width: -= 1.25in
-  height: .5in
-  x: += .375in
+  x: += .125in
   y: += .125in
   align: left
   font_size: 7
@@ -22,32 +19,27 @@ faction:
   align: right
   font_size: 7
 
-spacecraft-class:
-  extends:
-    - safe-top
-    - safe-left
-  x: += .125in
-  y: += .11in
-  height: 65
-  width: 65
-
 stat-icon:
   height: 60
   width: 60
 
-population:
-  extends:
-    - safe-top
-    - safe-right
-  x: -= .4in
-  y: += .125in
+cost-icon:
+  height: 0.1375in
+  width: 0.1375in
 
 construction:
   extends:
     - safe-top
-    - safe-right
-  x: -= .75in
+    - safe-left
+  x: += 1.25in
   y: += .125in
+  width: 0.375in
+  font_size: 10
+
+command:
+  extends:
+    - construction
+  x: += .5in
 
 bombardment:
   extends:

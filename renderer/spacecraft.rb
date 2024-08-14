@@ -37,9 +37,7 @@ class Spacecraft < Card
   def render(api, data, index = :all)
     title api, data['name'], data['unique'], index
 
-    spacecraft_class api, data['class'], index
-
-    population api, data['population'], index
+    command api, data['command'], index
     bombardment api, data['bombardment'], index
     construction api, data['construction'], index
     accuracy api, data['accuracy'], index
@@ -57,19 +55,15 @@ class Spacecraft < Card
     api.text layout: 'faction', str: faction_data, range: index
   end
 
-  def spacecraft_class(api, class_data, index)
-    api.svg layout: 'spacecraft-class', range: index, file: class_data.map { |x| x == nil ? nil : ship_class_to_file(x) }
-  end
-
-  def population(api, pop_data, index)
-    api.text layout: 'population', range: index, str: pop_data.map { |x| ":population:#{x}" } do |embed|
-      embed.svg layout: 'stat-icon', key: ':population:', file: 'icons/population.svg'
+  def command(api, commands, index)
+    api.text layout: 'command', range: index, str: commands.map { |x| ":command: #{x}" } do |embed|
+      embed.svg layout: 'cost-icon', key: ':command:', file: 'icons/population.svg'
     end
   end
 
   def construction(api, construction_data, index)
     api.text layout: 'construction', range: index, str: construction_data.map { |x| ":construction:#{x}" } do |embed|
-      embed.svg layout: 'stat-icon', key: ':construction:', file: 'icons/construction.svg'
+      embed.svg layout: 'cost-icon', key: ':construction:', file: 'icons/construction.svg'
     end
   end
 
