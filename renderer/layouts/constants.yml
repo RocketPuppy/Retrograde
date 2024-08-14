@@ -11,6 +11,9 @@ safe-right:
 safe-middle-horizontal:
   extends: safe-right
   x: /= 2
+safe-middle-vertical:
+  extends: safe-bottom
+  y: /= 2
 
 safe:
   extends:

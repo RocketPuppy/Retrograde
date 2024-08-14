@@ -13,6 +13,12 @@ class Card
     }, range: index)
   end
 
+  def debug(api)
+    api.grid layout: "debug-grid-minor"
+    api.grid layout: "debug-grid-major"
+    api.grid layout: "debug-grid-center"
+  end
+
   def abilities(api, ability_data, index)
     api.text layout: 'abilities', range: index, str: ability_data, markup: true do |embed|
       embed.svg layout: 'ability-icon', key: ':accuracy:', file: 'icons/accuracy.svg'

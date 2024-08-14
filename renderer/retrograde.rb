@@ -58,11 +58,11 @@ class Retrograde
   # because other layouts reference these. They cannot extend any layout that
   # isn't defined in itself.
   def pre_layouts
-    ['layouts/borders.yml', 'layouts/debug.yml']
+    ['layouts/borders.yml']
   end
 
   # Layouts added after print and import specific layouts are included.
   def base_layouts
-    ['layouts/constants.yml']
+    ['layouts/constants.yml', 'layouts/debug.yml']
   end
 end

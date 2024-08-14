@@ -1,3 +1,25 @@
 debug:
   hint: red
   stroke_color: red
+
+debug-grid-center:
+  extends:
+    - safe-middle-horizontal
+    - safe-middle-vertical
+  stroke_color: "#0000ff22"
+  width: 10in
+  height: 10in
+
+debug-grid-major:
+  stroke_color: "#ff000022"
+  dash: "0.02in 0.02in"
+  x: 0.125in
+  y: 0.125in
+  width: 0.5in
+  height: 0.5in
+
+debug-grid-minor:
+  extends: debug-grid-major
+  stroke_color: "#00000011"
+  width: /= 4
+  height: /= 4
