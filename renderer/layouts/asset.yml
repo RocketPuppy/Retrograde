@@ -91,22 +91,13 @@ orbit-left:
 title:
   extends:
     - main-width
-    - main-bottom
+    - main-top
     - main-left
   align: left
   font_size: 7
-  x: += .125in
-  y: *minus-title-offset
-
-faction:
-  extends:
-    - main-width
-    - main-bottom
-    - main-left
-  align: right
-  font_size: 7
-  x: += .125in
-  y: *minus-title-offset
+  width: -= 0.5in
+  x: += 0.0625in
+  y: += 0.0625in
 
 orbital-icon:
   width: .2in
@@ -133,42 +124,70 @@ horizon:
   y: -= 1.175in
   stroke_width: 4
 
+costs:
+  extends:
+    - main-right
+    - main-top
+  x: -= .45in
+  y: += .0625in
+  width: 0.375in
+  font_size: 7
+  align: right
+  valign: bottom
+
+combat:
+  extends:
+    - main-right
+    - main-bottom
+  width: 0.5in
+  font_size: 8
+  y: -= 0.375in
+  x: -= 0.625in
+
 construction:
   extends:
     - main-left
     - main-bottom
-  y: -= .7in
-  x: += .125in
-  font_size: 8
-  height: .165in
-  valign: bottom
-construction-icon:
-  width: .165in
-  height: .165in
+  width: 0.25in
+  height: 0.125in
+  font_size: 7
+  x: += 0.125in
+  y: -= 0.875in
 
-population:
+research:
   extends:
-    - main-left
-    - main-bottom
-  y: -= .5in
-  x: += .125in
-  height: .165in
-  font_size: 8
-  valign: bottom
-population-icon:
-  width: .165in
-  height: .165in
+    - construction
+  y: += 0.25in
 
-bombardment:
+colonization:
   extends:
-    - main-left
-    - main-bottom
-  y: -= .3in
-  x: += .125in
-  font_size: 8
-  height: .165in
-  valign: bottom
-bombardment-icon:
+    - research
+  y: += 0.25in
+
+influence:
+  extends:
+    - construction
+  x: += 0.375in
+
+intel:
+  extends:
+    - research
+  x: += 0.375in
+
+command:
+  extends:
+    - colonization
+  x: += 0.375in
+
+resource-icon:
+  width: 0.125in
+  height: 0.125in
+
+cost-icon:
+  width: .125in
+  height: .125in
+
+combat-icon:
   width: .165in
   height: .165in
 
@@ -183,27 +202,13 @@ homeworld-icon:
   width: .125in
   height: .125in
 
-ship-classes:
-  extends:
-    - main-top
-    - main-left
-    - main-width
-  align: left
-  x: += .0625in
-  spacing: 50
-
-ship-class-icon:
-  width: .2in
-  height: .2in
-
 abilities:
   extends:
     - main-left
-    - main-bottom
-    - main-width
+    - main-top
     - abilities-font
-  width: -= .62in
-  height: .7in
-  x: += .52in
-  y: -= .8in
+  width: 1.125in
+  height: .375in
+  x: += .875in
+  y: += 2.25in
   font_size: 4.5

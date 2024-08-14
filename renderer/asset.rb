@@ -30,7 +30,7 @@ class Asset < Card
   def render(api, data, index = :all)
     api.rect layout: 'main', range: index
 
-    title api, data['name'], data['unique'], index
+    title api, data['name'], [], index
 
     orbits api, data['orbit'].map { |x| x == nil ? [nil, nil, nil, nil] : x.split(",") }.transpose, index
 
@@ -38,23 +38,63 @@ class Asset < Card
 
     horizon api, index
 
-    population api, data['population'], index
-    construction api, data['construction'].zip(data['factory']).map { |x| "#{x[0] || 0}/#{x[1] || 0}" }, index
-    bombardment api, data['bombardment'], index
-
-    homeworld api, data['homeworld'], index
-
-    ship_classes api, data['classes'].map { |x| (x || "").split(",") }, index
+    costs api, data['settlement'], index
+    combat api, data['infrastructure'], index
+    resources api, data['construction'], data['research'].zip(data['research type']), data['colonization'], data['influence'], data['intel'], data['command'], index
 
     abilities api, data['abilities'], index
 
-    faction api, data['faction'], index
+    homeworld api, data['homeworld'], index
   end
 
   private
 
-  def faction(api, faction_data, index)
-    api.text layout: 'faction', str: faction_data, range: index
+  def resources(api, constructions, researches, colonizations, influences, intels, commands, index)
+    construction_str = constructions.map { |c| ":construction: #{c}" unless c.nil? }
+    research_str = researches.map do |r|
+      case r[1]
+      when "search"
+        ":research-search: #{r[0]}"
+      when "shuffle"
+        ":research-shuffle: #{r[0]}"
+      else
+        ":research-search: 0"
+      end
+    end
+    colonization_str = colonizations.map { |c| ":colonization: #{c}" unless c.nil? }
+    influence_str = influences.map { |i| ":influence: #{i}" unless i.nil? }
+    intel_str = intels.map { |i| ":intel: #{i}" unless i.nil? }
+    command_str = commands.map { |c| ":command: #{c}" unless c.nil? }
+
+    api.text layout: 'construction', str: construction_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':construction:', file: 'icons/construction.svg'
+    end
+    api.text layout: 'research', str: research_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':research-search:', file: 'icons/research-search.svg'
+      embed.svg layout: 'resource-icon', key: ':research-shuffle:', file: 'icons/research-reorder.svg'
+    end
+    api.text layout: 'colonization', str: colonization_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':colonization:', file: 'icons/population.svg'
+    end
+    api.text layout: 'influence', str: influence_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':influence:', file: 'icons/influence.svg'
+    end
+    api.text layout: 'intel', str: intel_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':intel:', file: 'icons/intel.svg'
+    end
+    api.text layout: 'command', str: command_str, range: index do |embed|
+      embed.svg layout: 'resource-icon', key: ':command:', file: 'icons/command.svg'
+    end
+  end
+
+  def combat(api, infrastructure, index)
+    combat_str = infrastructure.map do |value|
+      ":infrastructure: #{value}"
+    end
+
+    api.text layout: 'combat', str: combat_str, range: index do |embed|
+      embed.svg layout: 'combat-icon', key: ':infrastructure:', file: 'icons/bombardment.svg'
+    end
   end
 
   def homeworld(api, homeworld_data, index)
@@ -71,43 +111,13 @@ class Asset < Card
     end
   end
 
-  def bombardment(api, bombardment_data, index)
-    bombardment_data = bombardment_data.map do |bombardment|
-      ":bombardment: #{bombardment}"
-    end
-    api.text layout: 'bombardment', str: bombardment_data, range: index do |embed|
-      embed.svg layout: 'bombardment-icon', key: ':bombardment:', file: 'icons/bombardment.svg'
-    end
-  end
-
-  def population(api, population_data, index)
-    population_data = population_data.map do |population|
-      ":population: #{population}"
-    end
-    api.text layout: 'population', str: population_data, range: index do |embed|
-      embed.svg layout: 'population-icon', key: ':population:', file: 'icons/population.svg'
-    end
-  end
-
-  def construction(api, construction_data, index)
-    construction_data = construction_data.map do |construction|
-      ":construction: #{construction}"
-    end
-    api.text layout: 'construction', str: construction_data, range: index do |embed|
-      embed.svg layout: 'construction-icon', key: ':construction:', file: 'icons/construction.svg'
-    end
-  end
-
-  def ship_classes(api, ship_class_data, index)
-    ship_class_data = ship_class_data.map do |ship_classes|
-      ship_classes = ship_classes.map do |ship_class|
-        ship_class_to_icon ship_class unless ship_class.empty?
-      end
-      ship_classes.join("\n")
+  def costs(api, settlement_costs, index)
+    cost_strings = settlement_costs.map do |cost|
+      ":settlement: #{cost}" unless cost.nil?
     end
 
-    api.text layout: 'ship-classes', str: ship_class_data, range: index do |embed|
-      ship_class_embed embed
+    api.text layout: 'costs', str: cost_strings, range: index do |embed|
+      embed.svg layout: 'cost-icon', key: ':settlement:', file: 'icons/settlement.svg'
     end
   end
 
