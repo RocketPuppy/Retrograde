@@ -1,14 +1,7 @@
 { bash, gnugrep, coreutils, cards, deck-data }:
 let
   src = ./.;
-  mk-type-deck = import ./type-deck.nix;
   mk-deck = import ./deck.nix;
-  type-decks = builtins.map (
-    type: mk-type-deck {
-      name = type;
-      cards = builtins.getAttr type cards.byType;
-      inherit bash coreutils gnugrep;
-    }) (builtins.attrNames cards.byType);
 in
 builtins.map (
   d: mk-deck {
