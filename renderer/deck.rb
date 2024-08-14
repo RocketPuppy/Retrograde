@@ -12,12 +12,13 @@ end
 require 'squib'
 
 class Deck
-  def initialize(name, path, assets, upgrades, spacecraft)
+  def initialize(name, path, assets, upgrades, spacecraft, treaties)
     @name = name
     @path = path
     @assets = assets
     @upgrades = upgrades
     @spacecraft = spacecraft
+    @treaties = treaties
   end
 
   def name
@@ -42,12 +43,18 @@ class Deck
             d['internal_card_type'] = [:upgrade]
             d
           else
-            throw "Couldn't find card name \"#{name}\" in assets, upgrades, or spacecraft"
+            d = treaty_index(@treaties.data, name)
+            if d != nil then
+              d['internal_card_type'] = [:treaty]
+              d
+            else
+              throw "Couldn't find card name \"#{name}\" in assets, upgrades, spacecraft, or treaties"
+            end
           end
         end
       end
     end
-    starter = ["internal_card_type"].concat(@assets.data.to_h.keys).concat(@upgrades.data.to_h.keys).concat(@spacecraft.data.to_h.keys).uniq.each_with_object({}) { |k, o| o[k] = [] }
+    starter = ["internal_card_type"].concat(@assets.data.to_h.keys).concat(@upgrades.data.to_h.keys).concat(@spacecraft.data.to_h.keys).concat(@treaties.data.to_h.keys).uniq.each_with_object({}) { |k, o| o[k] = [] }
     big_data = big_data.each_with_object(starter) do |data, memo|
       memo.keys.each do |k|
         memo[k] = memo[k].concat(data[k] || [nil])
@@ -75,6 +82,11 @@ class Deck
       if card_type == :upgrade then
         api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@upgrades.layout)))
         @upgrades.render(api, data, i)
+      end
+
+      if card_type == :treaty then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@treaties.layout)))
+        @treaties.render(api, data, i)
       end
     end
   end
@@ -122,6 +134,20 @@ class Deck
     i = @upgrade_index[card_name]
     if i != nil then
       upgrade_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
+    else
+      nil
+    end
+  end
+
+  def treaty_index(treaty_data, card_name)
+    if treaty_data['name'].nil? then
+      return nil
+    end
+
+    @treaty_index ||= treaty_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
+    i = @treaty_index[card_name]
+    if i != nil then
+      treaty_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
     else
       nil
     end

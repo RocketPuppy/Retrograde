@@ -1,0 +1,48 @@
+title:
+  extends:
+    - safe-top
+    - safe-left
+  x: += .125in
+  y: += .125in
+  align: left
+  font_size: 7
+
+costs:
+  extends:
+    - safe-top
+    - safe-left
+  y: += .125in
+  x: += 1.75in
+
+cost-icon:
+  width: .125in
+  height: .125in
+
+option-above:
+  extends:
+    - safe-top
+    - safe-left
+  hint: black
+  y: += 0.625in
+  x: += 0.125in
+  width: 1.5in
+  height: 1in
+  font_size: 8
+
+option-below:
+  extends:
+    - option-above
+  y: += 1.25in
+
+upkeep-above:
+  extends:
+    - safe-top
+    - safe-left
+  y: += 0.625in
+  x: += 1.75in
+  font_size: 8
+
+upkeep-below:
+  extends:
+    - upkeep-above
+  y: += 1.25in

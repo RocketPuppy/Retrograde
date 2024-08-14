@@ -1,0 +1,7 @@
+name,faction,influence,upkeep1,upkeep2,option1,option2
+Construction Sharing,,1,1,1,You receive one construction to use on your turn,"When your opponent generates construction, you receive one construction to use on your next turn."
+Colonization Sharing,,1,1,1,You receive one colonization to use on your turn,"When your opponent generates colonization, you receive one colonization to use on your next turn."
+Influence Sharing,,1,1,1,You receive one influence to use on your turn,"When your opponent generates influence, you receive one influence to use on your next turn."
+Command Sharing,,1,1,1,You receive one command to use on your turn,"When your opponent generates command, you receive one command to use on your next turn."
+Intel Sharing,,1,1,1,You receive one intel to use on your opponents turn,"When your opponent generates intel, you receive one intel to use on their turn."
+Research Sharing,,1,1,1,When you generate research you receive one extra research of the same type.,"When your opponent generates research, you receive one research of the same type to use on your next turn."
