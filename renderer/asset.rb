@@ -57,8 +57,10 @@ class Asset < Card
         ":research-search: #{r[0]}"
       when "shuffle"
         ":research-shuffle: #{r[0]}"
+      when "draw"
+        ":research-draw: #{r[0]}"
       else
-        ":research-search: 0"
+        ":research-draw: 0"
       end
     end
     colonization_str = colonizations.map { |c| ":colonization: #{c}" unless c.nil? }
@@ -72,6 +74,7 @@ class Asset < Card
     api.text layout: 'research', str: research_str, range: index do |embed|
       embed.svg layout: 'resource-icon', key: ':research-search:', file: 'icons/research-search.svg'
       embed.svg layout: 'resource-icon', key: ':research-shuffle:', file: 'icons/research-reorder.svg'
+      embed.svg layout: 'resource-icon', key: ':research-draw:', file: 'icons/research-draw.svg'
     end
     api.text layout: 'colonization', str: colonization_str, range: index do |embed|
       embed.svg layout: 'resource-icon', key: ':colonization:', file: 'icons/population.svg'
