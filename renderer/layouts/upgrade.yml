@@ -69,7 +69,7 @@ construction-icon:
   width: .165in
   height: .165in
 
-bombardment:
+infrastructure:
   extends:
     - main-right
     - main-bottom
@@ -78,7 +78,7 @@ bombardment:
   font_size: 8
   height: .165in
   valign: bottom
-bombardment-icon:
+infrastructure-icon:
   width: .165in
   height: .165in
 

@@ -39,7 +39,7 @@ class Upgrade < Card
     title api, data['name'], data['unique'], index
 
     construction api, data['construction'], index
-    bombardment api, data['bombardment'], index
+    infrastructure api, data['infrastructure'], index
 
     abilities api, data['abilities'], index
 
@@ -52,12 +52,12 @@ class Upgrade < Card
     api.text layout: 'faction', str: faction_data, range: index
   end
 
-  def bombardment(api, bombardment_data, index)
+  def infrastructure(api, bombardment_data, index)
     bombardment_data = bombardment_data.map do |bombardment|
-      ":bombardment: #{bombardment}"
+      ":infrastructure: #{bombardment}"
     end
-    api.text layout: 'bombardment', range: index, str: bombardment_data do |embed|
-      embed.svg layout: 'bombardment-icon', key: ':bombardment:', file: 'icons/bombardment.svg'
+    api.text layout: 'infrastructure', range: index, str: bombardment_data do |embed|
+      embed.svg layout: 'infrastructure-icon', key: ':infrastructure:', file: 'icons/bombardment.svg'
     end
   end
 
