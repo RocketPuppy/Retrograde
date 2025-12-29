@@ -4,6 +4,7 @@
 , upgrades
 , spacecraft
 , treaties
+, espionage
 , doPrint ? false
 , doImport ? true
 , lib
@@ -47,11 +48,11 @@ stdenv.mkDerivation {
   ];
 
   buildPhase = ''
-    ruby main.rb $printFlag $importFlag -u $upgrades/upgrades.csv -a $assets/assets.csv -s $spacecraft/spacecraft.csv -t $treaties/treaties.csv --output="$PWD/build" $cardlist/*.csv
+    ruby main.rb $printFlag $importFlag -u $upgrades/upgrades.csv -a $assets/assets.csv -s $spacecraft/spacecraft.csv -t $treaties/treaties.csv -e $espionage/espionage.csv --output="$PWD/build" $cardlist/*.csv
   '';
 
   cardlist = card-list;
-  inherit card-list printFlag importFlag assets upgrades spacecraft treaties;
+  inherit card-list printFlag importFlag assets upgrades spacecraft treaties espionage;
 
   installPhase = ''
     mkdir $out

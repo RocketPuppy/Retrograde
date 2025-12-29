@@ -10,22 +10,22 @@ rec {
   decks = callPackage ./decks {
     inherit deck-data cards;
   };
-  mk-cards = { doPrint, doImport, name, card-list, assets, upgrades, spacecraft, treaties}:
+  mk-cards = { doPrint, doImport, name, card-list, assets, upgrades, spacecraft, treaties, espionage}:
     callPackage ./renderer {
       inherit (xorg) libpthreadstubs libXdmcp;
-      inherit squib doImport doPrint card-list assets upgrades spacecraft treaties;
+      inherit squib doImport doPrint card-list assets upgrades spacecraft treaties espionage;
       ruby = ruby_2_6;
       rubyPackages = rubyPackages_2_6;
     };
   rendered = {
     cards = rec {
-      import = builtins.mapAttrs (n: c: mk-cards { doPrint = false; doImport = true; name = c.name; card-list = c.card-list; assets = c.render-files; upgrades = c.render-files; spacecraft = c.render-files; treaties = c.render-files;}) cards.byName;
-      print = builtins.mapAttrs (n: c: mk-cards { doPrint = true; doImport = false; name = c.name; card-list = c.card-list; assets = c.render-files; upgrades = c.render-files; spacecraft = c.render-files; treaties = c.render-files;}) cards.byName;
+      import = builtins.mapAttrs (n: c: mk-cards { doPrint = false; doImport = true; name = c.name; card-list = c.card-list; assets = c.render-files; upgrades = c.render-files; spacecraft = c.render-files; treaties = c.render-files; espionage = c.render-files; }) cards.byName;
+      print = builtins.mapAttrs (n: c: mk-cards { doPrint = true; doImport = false; name = c.name; card-list = c.card-list; assets = c.render-files; upgrades = c.render-files; spacecraft = c.render-files; treaties = c.render-files; espionage = c.render-files; }) cards.byName;
       all = builtins.attrValues import;
     };
     decks = rec {
-      import = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = false; doImport = true; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; treaties = d.treaties; }; }) decks);
-      print = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = true; doImport = false; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; treaties = d.treaties; }; }) decks);
+      import = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = false; doImport = true; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; treaties = d.treaties; espionage = d.espionage; }; }) decks);
+      print = builtins.listToAttrs (builtins.map (d: { name = d.deck-name; value = mk-cards { doPrint = true; doImport = false; name = d.deck-name; card-list = d; assets = d.assets; upgrades = d.upgrades; spacecraft = d.spacecraft; treaties = d.treaties; espionage = d.espionage; }; }) decks);
       all = builtins.attrValues import;
     };
   };

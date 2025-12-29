@@ -1,7 +1,7 @@
 require 'optparse'
 require_relative 'retrograde'
 
-Options = Struct.new(:upgrade_data, :asset_data, :spacecraft_data, :treaty_data, :decks, :print, :import, :output, :sheet_only)
+Options = Struct.new(:upgrade_data, :asset_data, :spacecraft_data, :treaty_data, :espionage_data, :decks, :print, :import, :output, :sheet_only)
 
 class Parser
   def self.parse(options)
@@ -28,6 +28,9 @@ class Parser
       opts.on("-t PATH", "--treaty-data=PATH", String, "Specify the location of the treaty card data") do |data|
         args.treaty_data = data
       end
+      opts.on("-e PATH", "--espionage-data=PATH", String, "Specify the location of the espionage card data") do |data|
+        args.espionage_data = data
+      end
       opts.on("-o PATH", "--output=PATH", String, "Specify the path for output to be placed") do |data|
         args.output = data
       end
@@ -50,7 +53,7 @@ options = Parser.parse ARGV
 
 options.decks = ARGV
 
-retrograde = Retrograde.new(options.asset_data, options.upgrade_data, options.spacecraft_data, options.treaty_data, options.decks)
+retrograde = Retrograde.new(options.asset_data, options.upgrade_data, options.spacecraft_data, options.treaty_data, options.espionage_data, options.decks)
 if options.print then
   retrograde.render(Retrograde.print_mode, options.output, options.sheet_only)
 end

@@ -3,6 +3,7 @@ require_relative 'asset'
 require_relative 'spacecraft'
 require_relative 'upgrade'
 require_relative 'treaty'
+require_relative 'espionage'
 require_relative 'import'
 require_relative 'print'
 require_relative 'deck'
@@ -19,12 +20,13 @@ class Retrograde
     @@import_mode
   end
 
-  def initialize(asset_data_file, upgrade_data_file, spacecraft_data_file, treaty_data_file, decks)
+  def initialize(asset_data_file, upgrade_data_file, spacecraft_data_file, treaty_data_file, espionage_data_file, decks)
     assets = Asset.new(asset_data_file)
     upgrades = Upgrade.new(upgrade_data_file)
     spacecraft = Spacecraft.new(spacecraft_data_file)
     treaties = Treaty.new(treaty_data_file)
-    @decks = decks.map { |d| Deck.new(File.basename(d, '.csv'), d, assets, upgrades, spacecraft, treaties) }
+    espionage = Espionage.new(espionage_data_file)
+    @decks = decks.map { |d| Deck.new(File.basename(d, '.csv'), d, assets, upgrades, spacecraft, treaties, espionage) }
   end
 
   def render(mode, output_path = "output", sheet_only = false)

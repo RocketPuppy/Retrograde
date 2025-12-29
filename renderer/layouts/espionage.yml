@@ -1,0 +1,35 @@
+title:
+  extends:
+    - safe-top
+    - safe-left
+  x: += .125in
+  y: += .125in
+  align: left
+  font_size: 7
+
+costs:
+  extends:
+    - safe-top
+    - safe-left
+  y: += .125in
+  x: += 1.75in
+
+cost-icon:
+  width: .125in
+  height: .125in
+
+trigger:
+  extends:
+    - safe-top
+    - safe-left
+  x: += 0.125in
+  y: += 0.625in
+  width: 2.125in
+  height: 1in
+  hint: black
+  font_size: 8
+
+effect:
+  extends:
+    - trigger
+  y: += 1.125in

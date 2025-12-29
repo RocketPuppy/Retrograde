@@ -12,13 +12,14 @@ end
 require 'squib'
 
 class Deck
-  def initialize(name, path, assets, upgrades, spacecraft, treaties)
+  def initialize(name, path, assets, upgrades, spacecraft, treaties, espionage)
     @name = name
     @path = path
     @assets = assets
     @upgrades = upgrades
     @spacecraft = spacecraft
     @treaties = treaties
+    @espionage = espionage
   end
 
   def name
@@ -48,13 +49,19 @@ class Deck
               d['internal_card_type'] = [:treaty]
               d
             else
-              throw "Couldn't find card name \"#{name}\" in assets, upgrades, spacecraft, or treaties"
+              d = espionage_index(@espionage.data, name)
+              if d != nil then
+                d['internal_card_type'] = [:espionage]
+                d
+              else
+                throw "Couldn't find card name \"#{name}\" in assets, upgrades, spacecraft, treaties, or espionage."
+              end
             end
           end
         end
       end
     end
-    starter = ["internal_card_type"].concat(@assets.data.to_h.keys).concat(@upgrades.data.to_h.keys).concat(@spacecraft.data.to_h.keys).concat(@treaties.data.to_h.keys).uniq.each_with_object({}) { |k, o| o[k] = [] }
+    starter = ["internal_card_type"].concat(@assets.data.to_h.keys).concat(@upgrades.data.to_h.keys).concat(@spacecraft.data.to_h.keys).concat(@treaties.data.to_h.keys).concat(@espionage.data.to_h.keys).uniq.each_with_object({}) { |k, o| o[k] = [] }
     big_data = big_data.each_with_object(starter) do |data, memo|
       memo.keys.each do |k|
         memo[k] = memo[k].concat(data[k] || [nil])
@@ -87,6 +94,11 @@ class Deck
       if card_type == :treaty then
         api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@treaties.layout)))
         @treaties.render(api, data, i)
+      end
+
+      if card_type == :espionage then
+        api.instance_variable_set(:@layout, Squib::LayoutParser.new(api.dpi).load_layout(base_layouts.concat(@espionage.layout)))
+        @espionage.render(api, data, i)
       end
     end
   end
@@ -148,6 +160,20 @@ class Deck
     i = @treaty_index[card_name]
     if i != nil then
       treaty_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
+    else
+      nil
+    end
+  end
+
+  def espionage_index(espionage_data, card_name)
+    if espionage_data['name'].nil? then
+      return nil
+    end
+
+    @espionage_index ||= espionage_data['name'].each_with_index.each_with_object({}) { |names, o| o[names[0]] = names[1] }
+    i = @espionage_index[card_name]
+    if i != nil then
+      espionage_data.entries.each_with_object({}) { |entry, o| o[entry[0]] = [entry[1][i]] }
     else
       nil
     end
