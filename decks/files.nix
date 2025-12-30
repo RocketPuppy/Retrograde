@@ -9,6 +9,11 @@ let
       cards = builtins.getAttr type cards.byType;
       inherit bash coreutils gnugrep;
     }) (builtins.attrNames cards.byType);
+  all-file = mk-type-deck {
+    name = "all";
+    cards = cards.all;
+    inherit bash coreutils gnugrep;
+  };
   fileToDrv = file:
     let
       storeFile = builtins.toFile file (builtins.readFile (src + ("/" + file)));
@@ -22,4 +27,4 @@ let
       inherit storeFile coreutils;
     };
 in
-(builtins.map fileToDrv files) ++ type-files
+(builtins.map fileToDrv files) ++ type-files ++ [all-file]
