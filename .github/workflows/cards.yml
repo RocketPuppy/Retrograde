@@ -18,7 +18,7 @@ jobs:
         mkdir cards-tmp
         for O in $OUTS; do cp $O/singles/*.png cards-tmp/; done
         zip -r cards.zip cards-tmp/
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: cards
         path: cards.zip
@@ -28,7 +28,7 @@ jobs:
         mkdir decks-tmp
         for O in $OUTS; do cp $O/sheets/*.png decks-tmp/; done
         zip -r decks.zip decks-tmp/
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: decks
         path: decks.zip
