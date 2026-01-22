@@ -1,8 +1,8 @@
 name,homeworld,unique,construction,research,research type,colonization,settlement,influence,intel,command,orbitals,orbit,infrastructure,abilities
 Tierran: One,Y,Y,1,1,draw,1,,1,1,2,"16,12,9,6,4","20,20,20,20",5,Your megastructures cost 3 less to construct. This cannot reduce the cost lower than 1.
 Tierran: Two,Y,Y,1,1,draw,1,,1,1,2,"16,12,9,6,4","20,20,20,20",5,Your spacecraft cost 3 less to construct. This cannot reduce the cost lower than 1.
-Fii’lom: One,Y,Y,1,1,draw,1,,1,1,2,"10,6,3,1","7,7,7,7",5,You do not lose rebellion counters at the end of the turn.
-Fii’lom: Two,Y,Y,1,1,draw,1,,1,1,2,"10,6,3,1","7,7,7,7",5,Your treaties cost 2 less influence to maintain.
+Fii'lom: One,Y,Y,1,1,draw,1,,1,1,2,"10,6,3,1","7,7,7,7",5,You do not lose rebellion counters at the end of the turn.
+Fii'lom: Two,Y,Y,1,1,draw,1,,1,1,2,"10,6,3,1","7,7,7,7",5,Your treaties cost 2 less influence to maintain.
 ENIAK: One,Y,Y,1,1,draw,1,,1,1,2,"9,6,3,1","4,4,4,4",5,Your espionage operations cost 2 less intel to play.
 ENIAK: Two,Y,Y,1,1,draw,1,,1,1,2,"9,6,3,1","4,4,4,4",5,Spacecraft that cost 1 command do not count towards your passive command limit.
 Stellar Gate,,Y,0,0,,0,0,0,0,0,"6,3,1","12,12,12,12",6,"Stellar Gate begins play on the field, uncontrolled by either player. At the beginning of your turn, if Stellar Gate has been under your control for four consecutive turns, then you win the game. Friendly spacecraft in orbit around Stellar Gate may transfer to any other asset without paying the delta-vee cost. Upgrades cannot be constructed on Stellar Gate."
