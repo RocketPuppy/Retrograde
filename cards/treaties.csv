@@ -1,7 +1,7 @@
 name,faction,influence,upkeep1,upkeep2,option1,option2
-Construction Sharing,,1,1,1,You receive one construction to use on your turn,"When your opponent generates construction, you receive one construction to use on your next turn."
-Colonization Sharing,,1,1,1,You receive one colonization to use on your turn,"When your opponent generates colonization, you receive one colonization to use on your next turn."
-Influence Sharing,,1,1,1,You receive one influence to use on your turn,"When your opponent generates influence, you receive one influence to use on your next turn."
-Command Sharing,,1,1,1,You receive one command to use on your turn,"When your opponent generates command, you receive one command to use on your next turn."
-Intel Sharing,,1,1,1,You receive one intel to use on your opponents turn,"When your opponent generates intel, you receive one intel to use on their turn."
-Research Sharing,,1,1,1,When you generate research you receive one extra research of the same type.,"When your opponent generates research, you receive one research of the same type to use on your next turn."
+Cooperative Trade Networks,,2,1,1,You gain 1 influence at the start of your Utilization phase. Your opponent gains one Intel at the start of their Utilization phase.,You gain 1 Intel at the start of your Utilization phase. Your opponent gains one Influence at the start of their Utilization phase.
+Open Border Policy,,2,1,1,Your rebellions start with two more rebel counters.,You and your opponents rebellions start with one more rebel counter
+Border Control Division,,2,3,2,Your opponent can utilize two fewer intel each turn.,You and your opponent can utilize one fewer intel each turn.
+General Massive Exports,,2,1,2,You may utilize one fewer construction each turn. You gain 2 influence at the start of your Utilization phase.,All megastructures cost one fewer construction to construct.
+Disarmament Commission,,5,4,3,You and your opponent can only move one ship each turn.,You and your opponent can move one fewer ship each turn.
+Peace Sanctions,,5,3,5,"The first time either player attacks each turn, they lose all generated resources.","The first time your opponent attacks each turn, they lose all generated construction."
