@@ -1,13 +1,14 @@
 name,unique,accuracy,armor,delta-vee,command,construction,bombardment,faction,abilities
-Cheap Ship,,1,1,10,1,1,0,,
-Cheap Bombard,,0,1,10,1,1,1,,
-Cheap Both,,1,1,10,1,2,1,,
-Cheap Armored,,1,2,10,1,3,1,,
-Mid Ship,,3,2,10,2,3,0,,
-Mid Bombard,,0,2,10,2,3,3,,
-Mid Both,,2,2,10,2,5,2,,
-Mid Armored,,2,4,10,4,8,1,,
-Heavy Ship,,6,5,10,8,14,0,,
-Heavy Bombard,,0,5,10,8,14,8,,
-Heavy Both,,4,5,10,10,16,4,,
-Heavy Armored,,4,8,10,12,18,3,,
+Cloudraker,Y,4,10,6,4,6,4,,"Can choose to end a transition burn in an inner orbital of an asset, but takes damage equal to half of the delta-vee value of the orbital."
+Hyena FAV,Y,2,1,10,1,2,0,,
+Coyote FAV,Y,2,1,10,1,2,0,,
+Jackal FAV,Y,2,1,10,1,2,0,,
+Soilrazer,Y,4,10,6,4,6,3,,"When bombarding an asset, you may choose a megastructure on the asset to receive one damage. This damage cannot be reduced in any way."
+Olyphant Support Ship,Y,0,5,6,4,6,0,,Spacecraft in the same orbital as this card may take one less damage when receiving damage from any source.
+Itano's Cloud,Y,4,6,4,6,8,5,,"When this spacecraft makes an attack, choose a spacecraft in orbit around the asset. That spacecraft must spend 2 delta-vee or receive 1 damage."
+Cheetah Fleet Carrier,Y,1,2,20,4,6,0,,"When this spacecraft moves, one other spacecraft in the same orbit may move with it."
+Javelin Short-Range Defender,Y,4,1,10,1,2,0,,When you construct this spacecraft it may immediately make an attack against a spacecraft in the same orbital. Then it returns to construction with zero construction counters on it.
+Colonial Expediter,Y,0,1,4,6,8,0,,"You may command this spacecraft to move to an unsettled asset. If you do, remove this spacecraft from play and add 5 settlement counters to the asset."
+Pathmaker,Y,2,4,8,3,4,1,,"When this spacecraft destroys another spacecraft, it may regain 1 delta-vee."
+Herald of Destruction,Y,5,10,8,8,12,3,,When this spacecraft orbits an asset for the first time all enemy spacecraft must spend one delta-vee or take one damage.
+Steel Bathtub,Y,2,4,12,3,5,1,,This spacecraft does not take damage from debris.
