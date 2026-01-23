@@ -1,4 +1,4 @@
-name,homeworld,unique,construction,research,research type,colonization,settlement,influence,intel,command,infrastructure,orbitals,orbit,abilities
+name,homeworld,unique,construction,research,research type,colonization,settlement,influence,intel,command,infrastructure,orbit,orbitals,abilities
 Tierren: Industrial Conglomerate,Y,Y,3,1,Draw,3,,1,1,2,2,"7,9,7,9","5,2","If you would place more construction tokens on a spacecraft or megastructure than is required to complete it, then you may place the extra tokens on another spacecraft or megastructure under construction at that asset."
 Tierren: Megabuilders,Y,Y,4,1,Draw,2,,1,1,2,2,"7,9,7,9","5,2",Add 4 construction tokens to Tierren: Megabuilders. You may spend them as generated construction during the resource utilization phase.
 Tierren: Resilient Infrastructure,Y,Y,2,1,Draw,2,,2,2,2,2,"7,9,7,9","5,2",Newly constructed megastructures start with +1 infrastructure
