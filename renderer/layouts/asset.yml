@@ -137,12 +137,12 @@ costs:
 
 combat:
   extends:
-    - main-right
+    - main-left
     - main-bottom
   width: 0.5in
   font_size: 8
-  y: -= 0.375in
-  x: -= 0.625in
+  x: += 0.125in
+  y: -= 0.2in
 
 construction:
   extends:
@@ -208,7 +208,7 @@ abilities:
     - main-top
     - abilities-font
   width: 1.125in
-  height: .375in
+  height: 0.75in
   x: += .875in
   y: += 2.25in
   font_size: 4.5
