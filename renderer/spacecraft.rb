@@ -57,7 +57,7 @@ class Spacecraft < Card
 
   def command(api, commands, index)
     api.text layout: 'command', range: index, str: commands.map { |x| ":command: #{x}" } do |embed|
-      embed.svg layout: 'cost-icon', key: ':command:', file: 'icons/population.svg'
+      embed.svg layout: 'cost-icon', key: ':command:', file: 'icons/command.svg'
     end
   end
 
