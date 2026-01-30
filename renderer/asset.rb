@@ -52,7 +52,7 @@ class Asset < Card
   def resources(api, constructions, researches, colonizations, influences, intels, commands, index)
     construction_str = constructions.map { |c| ":construction: #{c}" unless c.nil? }
     research_str = researches.map do |r|
-      case r[1]
+      case r[1].downcase
       when "search"
         ":research-search: #{r[0]}"
       when "shuffle"
