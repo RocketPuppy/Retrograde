@@ -59,6 +59,8 @@ class Asset < Card
         ":research-shuffle: #{r[0]}"
       when "draw"
         ":research-draw: #{r[0]}"
+      when "*"
+        ":research-wild: #{r[0]}"
       else
         ":research-draw: 0"
       end
@@ -75,6 +77,7 @@ class Asset < Card
       embed.svg layout: 'resource-icon', key: ':research-search:', file: 'icons/research-search.svg'
       embed.svg layout: 'resource-icon', key: ':research-shuffle:', file: 'icons/research-reorder.svg'
       embed.svg layout: 'resource-icon', key: ':research-draw:', file: 'icons/research-draw.svg'
+      embed.svg layout: 'resource-icon', key: ':research-wild:', file: 'icons/research-wild.svg'
     end
     api.text layout: 'colonization', str: colonization_str, range: index do |embed|
       embed.svg layout: 'resource-icon', key: ':colonization:', file: 'icons/population.svg'
