@@ -32,15 +32,13 @@ class Asset < Card
 
     title api, data['name'], [], index
 
-    orbits api, data['orbit'].map { |x| x == nil ? [nil, nil, nil, nil] : x.split(",") }.transpose, index
-
-    orbitals api, data['orbitals'].map { |x| x == nil ? [] : x.to_s.split(",") }, index
-
     horizon api, index
 
     costs api, data['settlement'], index
     combat api, data['infrastructure'], index
     resources api, data['construction'], data['research'].zip(data['research type']), data['colonization'], data['influence'], data['intel'], data['command'], index
+
+    mass_factor api, data['mass factor'], index
 
     abilities api, data['abilities'], index
 
@@ -131,33 +129,9 @@ class Asset < Card
     api.ellipse layout: 'horizon', range: index
   end
 
-  def orbits(api, orbits_data, index)
-    orbit api, 'orbit-top', :with_icon, orbits_data[0], index
-    orbit api, 'orbit-right', orbits_data[1], index
-    orbit api, 'orbit-bottom', orbits_data[2], index
-    orbit api, 'orbit-left', orbits_data[3], index
-  end
-
-  def orbit(api, layout, with_icon = :without_icon, orbit_data, index)
-    if with_icon == :with_icon then
-      orbit_data = orbit_data.map { |x| ":orbit: #{x}" }
-    end
-
-    api.text layout: layout, str: orbit_data, range: index do |embed|
-      if with_icon == :with_icon then
-        embed.svg layout: 'orbit-icon', key: ':orbit:', file: 'icons/orbits.svg'
-      end
-    end
-  end
-
-  def orbitals(api, orbital_data, index)
-    orbital_string = orbital_data.map do |orbitals|
-      [":orbital-down:\n"].concat(orbitals.reverse.map { |orbital|
-        "#{orbital}"
-      }).join("\n")
-    end
-    api.text layout: 'orbitals', str: orbital_string, markup: true, range: index do |embed|
-      embed.svg layout: 'orbital-icon', key: ':orbital-down:', file: 'icons/orbital-down.svg'
+  def mass_factor(api, mass_factor, index)
+    api.text layout: 'mass-factor', str: mass_factor.map { |m| ":gravity: #{m}" }, range: index do |embed|
+      embed.svg layout: 'gravity-icon', key: ':gravity:', file: 'icons/gravity.svg'
     end
   end
 end

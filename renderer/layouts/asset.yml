@@ -43,49 +43,6 @@ main:
     - main-top
     - main-left
 
-# Orbit framing
-orbits-font:
-  font_size: *orbits-font-size
-orbit-icon:
-  width: *orbits-size
-  height: *orbits-size
-orbit-top:
-  extends:
-    - safe-top
-    - safe-left
-    - safe-width
-    - orbits-font
-  height: *orbits-size
-  align: center
-  valign: middle
-orbit-right:
-  extends:
-    - safe-top
-    - safe-height
-    - main-right
-    - orbits-font
-  width: *orbits-size
-  valign: middle
-  align: center
-orbit-bottom:
-  extends:
-    - safe-left
-    - safe-width
-    - main-bottom
-    - orbits-font
-  height: *orbits-size
-  align: center
-  valign: middle
-orbit-left:
-  extends:
-    - safe-left
-    - safe-top
-    - safe-height
-    - orbits-font
-  width: *orbits-size
-  valign: middle
-  align: center
-
 # Main card body elements
 
 title:
@@ -99,10 +56,10 @@ title:
   x: += 0.0625in
   y: += 0.0625in
 
-orbital-icon:
+gravity-icon:
   width: .2in
   height: .2in
-orbitals:
+mass-factor:
   extends:
     - main-width
     - main-top
