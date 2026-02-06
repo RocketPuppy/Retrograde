@@ -1,8 +1,8 @@
-name,faction,intel,trigger,effects
-Colonial Trainee Program,,2,Your opponent colonizes a new asset,Gain 2 colonization at the start of your Utilization phase.
-Experimental Hull Repair,,3,One of your spacecraft takes damage,Reduce that damage by 1
-Saturation Bombing Campaign,,4,You successfully bombard an asset.,That asset cannot generate resources next turn.
-Honeypot,,3,A rebellion damages your asset.,Do 2 damage to the rebellion.
-Coordinated Assault,,3,You start a rebellion.,Do 1 damage to each megastructure on the asset.
-Barrage Jamming,,5,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this turn.
-Intercepted Orders,,5,Your opponent moves a spacecraft out of an orbital containing your spacecraft.,You may move your spacecraft to the enemy spacecraft's new position.
+name,faction,command,trigger,effects
+Back Channel Deals,,1,Your opponent activates an asset.,"You receive the effects of that activation, instead of your opponent."
+Sabotaged Ordinance,,1,Your opponent attacks one of your spacecraft.,Do damage to the attacking spacecraft equal to its accuracy.
+Saturation Bombing Campaign,,1,You successfully bombard your opponent's asset.,That asset cannot be activated next turn.
+Crisis of Conscience,,1,One of your assets switches control to your opponent.,You gain control of one of your opponent's spacecraft.
+Coordinated Assault,,1,You successfully bombard your opponent's asset.,Do 1 damage to each megastructure on the asset.
+Barrage Jamming,,1,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this turn.
+Intercepted Orders,,1,Your opponent moves a spacecraft out of an orbital containing your spacecraft.,You may move your spacecraft to the enemy spacecraft's new position.

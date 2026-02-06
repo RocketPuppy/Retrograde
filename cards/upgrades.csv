@@ -1,12 +1,12 @@
 name,unique,construction,infrastructure,faction,abilities
-General J. Hamm Naval Base,Y,4,6,,This asset generates +4 command when it generates command.
-Vulcan Palisade,Y,8,8,,Spacecraft in low-orbit cannot be attacked by spacecraft in high-orbit.
-Space Elevator,Y,5,3,,Constructed spacecraft may start in high-orbit
-Nuclear Missile Silo,Y,4,4,,Spend 2 Command: Make an attack on a ship in orbit using 4 as the attack power.
-Air-gapped systems,Y,2,2,,Espionage events affecting this asset cost 2 more intel to play.
-Experimental Quantum Transmitter,Y,6,2,,If Experimental Quantum Receiver is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
-Experimental Quantum Receiver,Y,6,2,,If Experimental Quantum Transmitter is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
-Interplanetary Catapult Launcher,Y,4,2,,Your spacecraft in orbit around this asset only spend half the delta-vee to move to another asset.
-Interplanetary Catapult Receiver,Y,4,2,,Spacecraft moving to this asset only spend half the delta-vee to do so.
-Modular Construction Yards,Y,4,4,,This asset generates +4 construction when it generates construction
-Interplanetary Broadcast Station,Y,4,3,,This asset generates 2 influence during resource generation.
+General J. Hamm Naval Base,Y,2,6,,This asset provides +2 command.
+Vulcan Palisade,Y,4,8,,This asset cannot be bombarded. (Megastructures can still be bombarded)
+Space Elevator,Y,2,3,,Constructed spacecraft may start in high-orbit
+Nuclear Missile Silo,Y,2,4,,Spend 2 Command: Make an attack on a ship in orbit using 4 as the attack power.
+Air-gapped systems,Y,1,2,,Espionage events affecting this asset cost 1 more command to play.
+Experimental Quantum Transmitter,Y,3,2,,If Experimental Quantum Receiver is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
+Experimental Quantum Receiver,Y,3,2,,If Experimental Quantum Transmitter is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
+Interplanetary Catapult Launcher,Y,2,2,,Your spacecraft in orbit around this asset only spend half the delta-vee to move to another asset.
+Interplanetary Catapult Receiver,Y,2,2,,Spacecraft moving to this asset only spend half the delta-vee to do so.
+Modular Construction Yards,Y,2,4,,This asset generates +2 construction when it generates construction
+Interplanetary Broadcast Station,Y,1,3,,This asset provides +1 command
