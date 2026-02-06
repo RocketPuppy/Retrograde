@@ -114,27 +114,17 @@ construction:
 research:
   extends:
     - construction
-  y: += 0.25in
-
-colonization:
-  extends:
-    - research
-  y: += 0.25in
+  y: += 0.2in
 
 influence:
   extends:
-    - construction
-  x: += 0.375in
-
-intel:
-  extends:
     - research
-  x: += 0.375in
+  y: += 0.2in
 
 command:
   extends:
-    - colonization
-  x: += 0.375in
+    - costs
+  y: += 0.125in
 
 resource-icon:
   width: 0.125in
