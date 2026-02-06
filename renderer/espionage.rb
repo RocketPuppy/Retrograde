@@ -27,7 +27,7 @@ class Espionage < Card
 
   def render(api, data, index = :all)
     title api, data['name'], [], index
-    costs api, data['intel'], index
+    costs api, data['command'], index
 
     trigger api, data['trigger'], index
     effects api, data['effects'], index
@@ -36,8 +36,8 @@ class Espionage < Card
   private
 
   def costs(api, intel, index)
-    api.text layout: 'costs', range: index, str: intel.map { |x| ":intel: #{x}" } do |embed|
-      embed.svg layout: 'cost-icon', key: ':intel:', file: 'icons/intel.svg'
+    api.text layout: 'costs', range: index, str: intel.map { |x| ":command: #{x}" } do |embed|
+      embed.svg layout: 'cost-icon', key: ':command:', file: 'icons/command.svg'
     end
   end
 
