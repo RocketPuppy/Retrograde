@@ -1,8 +1,11 @@
 name,faction,command,trigger,effects
-Back Channel Deals,,1,Your opponent activates an asset.,"You receive the effects of that activation, instead of your opponent."
-Sabotaged Ordinance,,1,Your opponent attacks one of your spacecraft.,Do damage to the attacking spacecraft equal to its accuracy.
-Saturation Bombing Campaign,,1,You successfully bombard your opponent's asset.,That asset cannot be activated next turn.
-Crisis of Conscience,,1,One of your assets switches control to your opponent.,You gain control of one of your opponent's spacecraft.
-Coordinated Assault,,1,You successfully bombard your opponent's asset.,Do 1 damage to each megastructure on the asset.
-Barrage Jamming,,1,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this turn.
-Intercepted Orders,,1,Your opponent moves a spacecraft out of an orbital containing your spacecraft.,You may move your spacecraft to the enemy spacecraft's new position.
+Back Channel Deals,T,1,Your opponent activates an asset.,"You receive the effects of that activation, instead of your opponent."
+Sabotaged Ordinance,T,1,Your opponent attacks one of your spacecraft.,Do damage to the attacking spacecraft equal to its accuracy.
+Saturation Bombing Campaign,T,1,You successfully bombard your opponent's asset.,That asset cannot be activated next turn.
+Crisis of Conscience,T,1,One of your assets switches control to your opponent.,You gain control of one of your opponent's spacecraft.
+Coordinated Assault,T,1,You successfully bombard your opponent's asset.,Do 1 damage to each megastructure on the asset.
+Barrage Jamming,T,1,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this turn.
+Intercepted Orders,T,1,Your opponent moves a spacecraft out of an orbital containing your spacecraft.,You may move your spacecraft to the enemy spacecraft's new position.
+Retribution Protocol,E,1,One of your assets takes damage.,Deal 1 damage to two different assets.
+C2 Worm,E,1,A megastructure finishes construction.,You gain control of target megastructure for the next round.
+BGP Isolation Procedures,E,1,A spacecraft moves to one of your assets.,Target spacecraft cannot be activated again this round.
