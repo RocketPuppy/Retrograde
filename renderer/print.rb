@@ -30,7 +30,8 @@ class Print < Squib::Deck
   end
 
   def output(output_path = "output/print", save_png: true, save_sheet: true)
-    save_png prefix: @name, dir: "#{output_path}/singles" if save_png
-    save_sheet prefix: "retrograde_#{@name}", dir: "#{output_path}/sheets", columns: 4, sprue: "sprues/print-sprue.yml" if save_sheet
+    name = @name.gsub(/[^a-zA-Z0-9._-]/, '')
+    save_png prefix: name, dir: "#{output_path}/singles" if save_png
+    save_sheet prefix: "retrograde_#{name}", dir: "#{output_path}/sheets", columns: 4, sprue: "sprues/print-sprue.yml" if save_sheet
   end
 end
