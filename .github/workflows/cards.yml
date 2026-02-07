@@ -17,6 +17,7 @@ jobs:
         OUTS=$(nix-build default.nix -A rendered.cards.all --no-out-link)
         mkdir cards-tmp
         for O in $OUTS; do cp $O/singles/*.png cards-tmp/; done
+        find cards-tmp/ -name '*.png' -execdir sh -c "echo {} | sed 's/[^a-zA-Z0-9 _.-]//g' | xargs -0 mv \"{}\"" \;
     - uses: actions/upload-artifact@v4
       with:
         name: cards
