@@ -53,7 +53,14 @@ armor:
     - safe-middle-horizontal
     - safe-top
   y: += .75in
-  x: -= 30
+  x: -= 50
+
+regen:
+  extends:
+    - safe-middle-horizontal
+    - safe-top
+  y: += .75in
+  x: += 40
 
 delta-vee:
   extends:

@@ -43,6 +43,7 @@ class Spacecraft < Card
     accuracy api, data['accuracy'], index
     armor api, data['armor'], index
     delta_vee api, data['delta-vee'], index
+    regen api, data['regen'], index
 
     abilities api, data['abilities'], index
 
@@ -59,6 +60,12 @@ class Spacecraft < Card
     end
     api.text layout: 'victory-points', range: index, str: vp_data do |embed|
       embed.svg layout: 'cost-icon', key: ':victory:', file: 'icons/victory.svg'
+    end
+  end
+
+  def regen(api, regens, index)
+    api.text layout: 'regen', range: index, str: regens.map { |x| ":regen:\n\r#{x}" } do |embed|
+      embed.svg layout: 'stat-icon', key: ':regen:', file: 'icons/regen.svg'
     end
   end
 
