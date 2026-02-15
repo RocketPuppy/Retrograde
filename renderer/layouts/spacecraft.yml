@@ -7,6 +7,11 @@ title:
   align: left
   font_size: 7
 
+victory-points:
+  extends:
+    - title
+  y: += .125in
+
 stat-icon:
   height: 60
   width: 60

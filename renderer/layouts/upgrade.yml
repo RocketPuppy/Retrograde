@@ -45,6 +45,17 @@ title:
   height: *title-height
   font_size: 7
 
+victory-points:
+  extends:
+    - title
+  y: += .125in
+  font_size: 8
+  height: .165in
+  valign: bottom
+victory-points-icon:
+  width: .165in
+  height: .165in
+
 construction:
   extends:
     - main-right

@@ -42,9 +42,22 @@ class Upgrade < Card
     infrastructure api, data['infrastructure'], index
 
     abilities api, data['abilities'], index
+
+    victory_points api, data['victory-points'], index
   end
 
   private
+
+  def victory_points(api, vp_data, index)
+    vp_data = vp_data.map do |vp|
+      if !vp.nil?
+        ":victory: #{vp}"
+      end
+    end
+    api.text layout: 'victory-points', range: index, str: vp_data do |embed|
+      embed.svg layout: 'victory-points-icon', key: ':victory:', file: 'icons/victory.svg'
+    end
+  end
 
   def infrastructure(api, bombardment_data, index)
     bombardment_data = bombardment_data.map do |bombardment|
