@@ -28,6 +28,6 @@ class Import < Squib::Deck
   def output(output_path = "output/import", save_png: true, save_sheet: true)
     name = @name.gsub(/[^a-zA-Z0-9._-]/, '')
     save_png prefix: name, dir: "#{output_path}/singles" if save_png
-    save_sheet prefix: "retrograde_#{name}", dir: "#{output_path}/sheets", columns: 10 if save_sheet
+    save_sheet prefix: "retrograde_#{name}", dir: "#{output_path}/sheets", columns: 10, rows: 7 if save_sheet
   end
 end
