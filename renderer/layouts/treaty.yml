@@ -27,7 +27,7 @@ option-above:
   x: += 0.125in
   width: 1.5in
   height: 1in
-  font_size: 8
+  font_size: 6
 
 option-below:
   extends:
@@ -40,7 +40,7 @@ upkeep-above:
     - safe-left
   y: += 0.625in
   x: += 1.75in
-  font_size: 8
+  font_size: 6
 
 upkeep-below:
   extends:
