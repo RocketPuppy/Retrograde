@@ -26,7 +26,7 @@ class Treaty < Card
   end
 
   def render(api, data, index = :all)
-    title api, data['name'], [], index
+    title api, data['name'], data['faction'], index
     costs api, data['influence'], index
 
     option api, :above, data['option1'], data['upkeep1'], index

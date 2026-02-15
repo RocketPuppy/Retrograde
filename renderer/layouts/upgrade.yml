@@ -45,17 +45,6 @@ title:
   height: *title-height
   font_size: 7
 
-faction:
-  extends:
-    - main-bottom
-    - main-left
-  align: right
-  x: += .125in
-  y: *minus-title-height
-  width: *title-width
-  height: *title-height
-  font_size: 7
-
 construction:
   extends:
     - main-right

@@ -3,10 +3,10 @@ require 'squib'
 # Base layout methods for a card regardless of type. These methods do the same
 # thing regardless of card type
 class Card
-  def title(api, title_data, unique_data, index)
-    api.text(layout: 'title', str: title_data.zip(unique_data).map { |x| 
-      if x[1] == 'Y' then
-        "◆ #{x[0]}"
+  def title(api, title_data, faction_data, index)
+    api.text(layout: 'title', str: title_data.zip(faction_data).map { |x|
+      if !x[1].nil? && !x[1].empty?
+        "#{x[1]}|#{x[0]}"
       else
         x[0]
       end

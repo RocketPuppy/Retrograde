@@ -26,7 +26,7 @@ class Espionage < Card
   end
 
   def render(api, data, index = :all)
-    title api, data['name'], [], index
+    title api, data['name'], data['faction'], index
     costs api, data['command'], index
 
     trigger api, data['trigger'], index

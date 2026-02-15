@@ -35,7 +35,7 @@ class Spacecraft < Card
 
   # Takes the api object defining the Squib DSL and the deck data to render
   def render(api, data, index = :all)
-    title api, data['name'], data['unique'], index
+    title api, data['name'], data['faction'], index
 
     command api, data['command'], index
     bombardment api, data['bombardment'], index
@@ -45,15 +45,9 @@ class Spacecraft < Card
     delta_vee api, data['delta-vee'], index
 
     abilities api, data['abilities'], index
-
-    faction api, data['faction'], index
   end
 
   private
-
-  def faction(api, faction_data, index)
-    api.text layout: 'faction', str: faction_data, range: index
-  end
 
   def command(api, commands, index)
     api.text layout: 'command', range: index, str: commands.map { |x| ":command: #{x}" } do |embed|
