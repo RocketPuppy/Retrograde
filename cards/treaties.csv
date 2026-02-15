@@ -1,7 +1,11 @@
 name,faction,influence,upkeep1,upkeep2,option1,option2
-Joint Training Exercises,,1,1,1,The proposing player may activate one of their opponents ships once each round. They may not attack or bombard during that activation.,Each player may activate one of their opponents planets once each round. All command is spent by the owning player. Any effects are treated as applying to the player activating the planet.
-Open Border Policy,,1,1,1,When either player activates a planet the other player also receives the effects of that activation.,Neither player may bombard planets.
-Border Control Division,,1,1,1,Spacecraft may only move between adjacent assets.,If a spacecraft moves to a different asset it may not be activated again that round.
-General Massive Exports,,1,1,1,All spacecraft cost one fewer construction to construct.,All megastructures cost one fewer construction to construct.
-Disarmament Commission,,1,1,1,You and your opponent can only move one ship each round.,You and your opponent can only activate one planet per round.
-Peace Sanctions,,1,1,1,When either player attacks using a spacecraft they lose all remaining command.,"After the first time the proposing player's opponent attacks each round, the proposing player may activate a spacecraft to attack without spending command."
+Joint Training Exercises,T,1,1,1,The proposing player may activate one of their opponents ships once each round. They may not attack or bombard during that activation.,Each player may activate one of their opponents planets once each round. All command is spent by the owning player. Any effects are treated as applying to the player activating the planet.
+Open Border Policy,T,1,1,1,When either player activates a planet the other player also receives the effects of that activation as if they happened on their homeworld.,Neither player may bombard planets.
+Border Control Division,T,1,1,1,Spacecraft may only move between adjacent assets.,If a spacecraft moves to a different asset it may not be activated again that round.
+General Massive Exports,T,1,1,1,All spacecraft cost one fewer construction to construct.,All megastructures cost one fewer construction to construct.
+Disarmament Commission,T,1,1,1,You and your opponent can only move one ship each round.,You and your opponent can only activate one planet per round.
+Peace Sanctions,T,1,1,1,When either player attacks using a spacecraft they lose all remaining command.,"After the first time the proposing player's opponent attacks each round, the proposing player may activate a spacecraft to attack without spending command."
+Reflog Protocols,E,1,1,1,"When a spacecraft is destroyed, both players draw a card.","When a spacecraft is destroyed, it is returned to its owner's hand instead of becoming debris."
+Graviton Test Treaty,E,1,1,1,Spacecraft cannot move to the asset hosting this treaty or the assets gravitationally linked to it.,Spacecraft may only move to the asset hosting this treaty or the assets gravitationally linked to it.
+Multiversal Negotiations,E,1,1,1,Cards are drawn from the bottom of the deck.,Cards are drawn from the opponent's deck.
+Optimized Logistics Sharing,E,1,1,1,The first spacecraft activated by each player each round costs zero command points.,The first planet activated by each player each round costs zero command points.

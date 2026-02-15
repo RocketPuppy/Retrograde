@@ -4,8 +4,14 @@ Sabotaged Ordinance,T,1,Your opponent attacks one of your spacecraft.,Do damage 
 Saturation Bombing Campaign,T,1,You successfully bombard your opponent's asset.,That asset cannot be activated next turn.
 Crisis of Conscience,T,1,One of your assets switches control to your opponent.,You gain control of one of your opponent's spacecraft.
 Coordinated Assault,T,1,You successfully bombard your opponent's asset.,Do 1 damage to each megastructure on the asset.
-Barrage Jamming,T,1,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this turn.
+Barrage Jamming,T,1,One of your spacecraft occupies an orbital with an enemy spacecraft.,That spacecraft cannot be targeted this round.
 Intercepted Orders,T,1,Your opponent moves a spacecraft out of an orbital containing your spacecraft.,You may move your spacecraft to the enemy spacecraft's new position.
 Retribution Protocol,E,1,One of your assets takes damage.,Deal 1 damage to two different assets.
-C2 Worm,E,1,A megastructure finishes construction.,You gain control of target megastructure for the next round.
-BGP Isolation Procedures,E,1,A spacecraft moves to one of your assets.,Target spacecraft cannot be activated again this round.
+C2 Worm,E,1,An enemy megastructure finishes construction.,You gain control of that megastructure for the next round.
+BGP Isolation Procedures,E,1,An enemy spacecraft moves to one of your assets.,That spacecraft cannot be activated again this round.
+Archeaological Extrapolation,E,2,You take control of an enemy asset.,"Search your deck for a card, reveal it, and put it in your hand. Shuffle your deck."
+Thermal Overload,E,1,The Immolation Beam damages a target enemy spacecraft.,Deal 5 damage to target spacecraft. Target spacecraft cannot be activated again this round.
+RF Bounce Prediction,E,1,Debris is created.,Gain +2 command until the end of the round.
+Nanoreconstructive Swarm,E,2,Target spacecraft would be destroyed.,Target spacecraft instead regains 1 armor and 3 delta-vee. It is now under your control.
+Uncontrolled Overload,E,1,Target spacecraft is destroyed.,Do 1 damage to all enemy spacecraft orbiting the same asset.
+Retroactive Negotiation,E,1,Your opponent proposes a treaty.,Swap the effects of one of your treaties.

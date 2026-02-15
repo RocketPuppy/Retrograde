@@ -1,12 +1,21 @@
-name,unique,construction,infrastructure,faction,abilities
-General J. Hamm Naval Base,Y,2,6,,This asset provides +2 command.
-Vulcan Palisade,Y,4,8,,This asset cannot be bombarded. (Megastructures can still be bombarded)
-Space Elevator,Y,2,3,,Constructed spacecraft may start in high-orbit
-Nuclear Missile Silo,Y,2,4,,Spend 2 Command: Make an attack on a ship in orbit using 4 as the attack power.
-Air-gapped systems,Y,1,2,,Espionage events affecting this asset cost 1 more command to play.
-Experimental Quantum Transmitter,Y,3,2,,If Experimental Quantum Receiver is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
-Experimental Quantum Receiver,Y,3,2,,If Experimental Quantum Transmitter is installed on another asset then both this asset and the other asset receive +1 to all resource generation.
-Interplanetary Catapult Launcher,Y,2,2,,Your spacecraft in orbit around this asset only spend half the delta-vee to move to another asset.
-Interplanetary Catapult Receiver,Y,2,2,,Spacecraft moving to this asset only spend half the delta-vee to do so.
-Modular Construction Yards,Y,2,4,,This asset generates +2 construction when it generates construction
-Interplanetary Broadcast Station,Y,1,3,,This asset provides +1 command
+name,unique,construction,infrastructure,faction,abilities,victory-points
+General J. Hamm Naval Base,Y,4,2,T,This asset provides +2 command.,2
+Vulcan Palisade,Y,4,2,T,This asset cannot be bombarded. (Megastructures can still be bombarded),2
+Space Elevator,Y,1,1,T,Constructed spacecraft may start in high-orbit,1
+Nuclear Missile Silo,Y,3,2,T,Spend 2 Command: Make an attack on a ship in orbit treating the attack delta-vee as 4 and the accuracy as 2.,1
+Air-gapped systems,Y,1,1,T,Espionage events affecting this asset cost 1 more command to play.,1
+Experimental Quantum Transmitter,Y,2,1,T,If you own Experimental Quantum Receiver on another asset then both assets receive +1 to all resource generation.,1
+Experimental Quantum Receiver,Y,2,1,T,If you own Experimental Quantum Transmitter on another asset then both this assets receive +1 to all resource generation.,1
+Interplanetary Catapult Launcher,Y,2,1,T,Your spacecraft in orbit around this asset only spend half the delta-vee to move to another asset.,1
+Interplanetary Catapult Receiver,Y,2,1,T,Spacecraft moving to this asset only spend half the delta-vee to do so.,1
+Modular Construction Yards,Y,2,2,T,This asset generates +2 construction when it generates construction,1
+Interplanetary Broadcast Station,Y,3,1,T,This asset provides +1 command,1
+0K Research Labs,Y,3,2,E,This asset draws 1 more card when drawing cards.,
+Simulacrum Facility,Y,1,1,E,Activate: You may look at one random card in your opponent's hand.,
+Reconstructive Modeller,Y,2,1,E,"When this asset takes damage, draw a card.",
+Synaptic Recycler,Y,2,2,E,Activate: Place a card from your hand facedown in any orbit. That card is now debris.,
+Magnetospheric Manipulator,Y,2,2,E,"Activate: If there is debris around this asset, do 1 damage to target enemy spacecraft.",
+Excavated Core Computer,Y,2,2,E,Subtract 1 from this asset's gravitational factor. It can't go below 1.,
+Osmium Shielded Circuitry,Y,2,2,E,Add 1 to this asset's gravitational factor.,
+Logistical Kill Switch,Y,1,2,E,"If this asset is no longer under your control, it cannot be activated.",
+Hypertrophic Pacifier,Y,3,1,E,Acitvate: Spacecraft in orbit around this asset cannot attack.,
