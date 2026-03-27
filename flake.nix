@@ -13,7 +13,7 @@
       in
       {
         packages.retrograde-cards = pkgs.stdenv.mkDerivation {
-          name = "retrograde-cards.tar";
+          name = "retrograde-cards";
           src = ./.;
 
           buildInputs = [
@@ -32,7 +32,8 @@
           installPhase = ''
             runHook preInstall
 
-            tar -cf $out *.png
+            mkdir $out/
+            cp *.png $out/
 
             runHook postInstall
           '';
